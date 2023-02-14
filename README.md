@@ -1,6 +1,6 @@
-# FirstApp
+# e-wallet-Alkemy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
 ## Development server
 
@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Dependencias y comandos de instalación
+
+- npm install
+- ng add @angular/material
+- npm install bootstrap
+- npm i --save-dev @types/node
+- npm install --save ngx-logger
+
+
+## Reglas
+
+- Debe estar registrado para poder utilizar la billetera.
+
+## Acerca de la App
+
+- Creada con Angular v14
+- Utiliza Angular Material Framework para app compoments
+- CSS template engine is SCSS
