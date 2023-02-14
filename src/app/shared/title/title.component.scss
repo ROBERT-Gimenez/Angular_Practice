@@ -1,0 +1,14 @@
+.titleContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    position: absolute;
+    text-align: center;
+    font-size: 4em;
+    margin-top: 50px;
+    color: #544789;
+    text-transform: uppercase;
+}

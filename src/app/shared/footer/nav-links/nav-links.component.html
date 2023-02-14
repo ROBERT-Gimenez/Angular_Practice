@@ -1,0 +1,6 @@
+<nav class="Links_Container">
+    <a class="links_footer" *ngFor="let link of links" [routerLink]="[link.path]">
+       <i class={{link.icon}}></i> {{ link.label }}
+    </a>
+    
+</nav>

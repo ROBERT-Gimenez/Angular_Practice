@@ -1,0 +1,65 @@
+
+<app-terms-and-conditions
+[canLook]="canLook"
+(onView)="viewTerms()"
+*ngIf="canLook"></app-terms-and-conditions>
+
+<div class="contenedor">
+
+
+    <div class="loginForm">
+
+        <h2 class="titulo">Registrarse</h2>
+
+        <form [formGroup]="registroForm" (ngSubmit)="register()">
+
+
+            <label for="fisrtName_Input">Nombre:</label>
+            <input  formControlName="first_name" class="box" type="text" id="fisrtName_Input" placeholder="Introduce tu nombre"
+            required>
+            <div *ngIf="registroForm.controls.first_name.touched&& registroForm.controls.first_name.errors">
+                <p class="invalid"> Nombre obligatorio</p>
+            </div>
+
+            <label for="lastName_Input">Apellido:</label>
+            <input  formControlName="last_name" class="box" type="text" id="lastName_Input" placeholder="Introduce tu apellido"
+            required>
+            <div *ngIf="registroForm.controls.last_name.touched&& registroForm.controls.last_name.errors">
+                <p class="invalid"> Apellido obligatorio</p>
+            </div>
+
+            <label for="emailInput">Correo electrónico:</label>
+
+            <input  formControlName="email" class="box" type="email" id="emailInput" placeholder="example@example.com"
+                required>
+            <div *ngIf="registroForm.controls.email.touched&& registroForm.controls.email.errors">
+                <p class="invalid"> Correo electrónico obligatorio</p>
+            </div>
+            
+            <label for="passwordInput">Contraseña:</label>
+
+            <input  formControlName="password" class="box" type="password" id="passwordInput"
+                placeholder="Ingresa tu contraseña" required minlength="6">
+            <div *ngIf=" registroForm.controls.password.touched && registroForm.controls.password.errors">
+                <p class="invalid"> Contraseña obligatoria</p>
+            </div>
+
+            <div>
+                <input type="checkbox" name="Terminos" id="Terminos"
+                       formControlName="terms">
+            <label > Aceptar 
+                <a class="terms"
+                (click)="viewTerms()">terminos y condiciones</a>
+            </label>
+            <p class="invalid" *ngIf="registroForm.controls.terms.touched && registroForm.controls.terms.invalid"> Los terminos son obligatorio</p>
+            </div>
+
+            <button class="btnLogin" [disabled]="registroForm.invalid">Registrarme</button>
+
+            
+
+        </form>
+
+    </div>
+</div>
+

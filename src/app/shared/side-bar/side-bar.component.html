@@ -1,0 +1,108 @@
+
+    <section class="ToolBar">
+        <mat-toolbar>
+            <button mat-icon-button class="example-icon"
+                    aria-label="Example icon-button with menu icon"
+                    (click)="open(sideBar)">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </mat-toolbar>
+    </section>
+
+
+    <section class="sideBar" *ngIf="!sidebarMobile">
+        <div class="sideBarTop"
+             [routerLink]="menuTop.route"
+             routerLinkActive="active"
+             (click)="titleSend(menuTop.title)">
+            <div class="hover">
+                <mat-icon >
+                {{menuTop.icon}}
+                </mat-icon>
+                <p>{{menuTop.title}}</p>
+            </div> 
+        </div>
+    
+        <hr>
+    
+        <div class="sideBarMain">
+            <ul>
+                <li *ngFor="let option of menuOptions"
+                    routerLinkActive="active"
+                    [routerLink]="option.route"
+                    (click)="titleSend(option.title)">
+                    <mat-icon
+                    >
+                    {{option.icon}} 
+                    </mat-icon>
+                    <p>
+                    {{option.title}}
+                    </p>
+                </li>
+            </ul>   
+        </div>
+    
+        <hr>
+    
+        <div class="sideBarBottom">
+            <div class="hover">
+                <mat-icon routerLinkActive="active" 
+                        (click)="logout()"
+                        routerLink="/login">
+                    {{menuBottom.icon}}
+                </mat-icon>
+                <p >{{menuBottom.title}}</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="sideBarMovile" #sideBar>
+        <div class="sideBarTop"
+             [routerLink]="menuTop.route"
+             routerLinkActive="active"
+             (click)="titleSend(menuTop.title)">
+            <div class="hover">
+                <mat-icon >
+                {{menuTop.icon}}
+                </mat-icon>
+                <p>{{menuTop.title}}</p>
+            </div> 
+        </div>
+    
+        <hr>
+    
+        <div class="sideBarMain">
+            <ul>
+                <li *ngFor="let option of menuOptions"
+                    routerLinkActive="active"
+                    [routerLink]="option.route"
+                    (click)="titleSend(option.title)">
+                    <mat-icon
+                    >
+                    {{option.icon}} 
+                    </mat-icon>
+                    <p>
+                    {{option.title}}
+                    </p>
+                </li>
+            </ul>   
+        </div>
+    
+        <hr>
+    
+        <div class="sideBarBottom">
+            <div class="hover">
+                <mat-icon routerLinkActive="active" 
+                        (click)="logout()"
+                        routerLink="/login">
+                    {{menuBottom.icon}}
+                </mat-icon>
+                <p >{{menuBottom.title}}</p>
+            </div>
+        </div>
+    
+    
+    </section>
+
+

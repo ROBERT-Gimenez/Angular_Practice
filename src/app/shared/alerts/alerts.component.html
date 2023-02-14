@@ -1,0 +1,10 @@
+
+<h2 mat-dialog-title>{{data.err}}</h2>
+<mat-dialog-content class="mat-typography">
+  {{data.msg}}
+  
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="close" mat-button *ngIf="data.buttonOne" mat-dialog-close>ok</button>
+  <button mat-button *ngIf="data.buttonTwo" mat-dialog-close [mat-dialog-close]="true" cdkFocusInitial>No</button>
+</mat-dialog-actions>

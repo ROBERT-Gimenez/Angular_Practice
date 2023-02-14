@@ -1,0 +1,42 @@
+<div class="contenedor">
+
+    <div class="loginForm">
+
+        <h2 class="titulo">Bienvenido a AlkyBank</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <label for="emailInput">Correo electrónico</label>
+
+
+
+            <input  formControlName="email" class="box" type="email" id="emailInput" placeholder="example@example.com"
+                required>
+            <div *ngIf="loginForm.controls.email.touched&& loginForm.controls.email.errors">
+                <p class="invalid"> Correo electrónico obligatorio</p>
+            </div>
+            
+            <label for="passwordInput">Contraseña</label>
+
+
+            <input  formControlName="password" class="box" type="password" id="passwordInput"
+                placeholder="Ingresa tu contraseña" required minlength="6">
+            <div *ngIf=" loginForm.controls.password.touched && loginForm.controls.password.errors">
+                <p class="invalid"> Contraseña obligatoria</p>
+            </div>
+
+
+            <button class="btnLogin" [disabled]="loginForm.invalid">Ingresar</button>
+            <!-- Tarea: Agregar alerta en caso de que el usuario no exista  -->
+            
+            <a href="/register" class="btnRegister">Registrarse</a>
+
+
+
+            <a class="olvideContra">Olvidé mi contraseña</a>
+
+
+        </form>
+
+    </div>
+</div>

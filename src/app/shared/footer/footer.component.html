@@ -1,0 +1,23 @@
+<div class="footer_container">
+  <div class="logo_container">
+    <div class="img_container">
+      
+        <img src={{logoUrl}}
+         alt="Logo"
+         (click)="goToHome()"
+         >
+    </div>
+    <p><i><mat-icon>copyright</mat-icon>2023 CodeBusters</i></p>
+    </div>
+  <div class="Column_Contact">
+    <ul class="list_conditions">
+      <li><a href="/">Contacto</a></li>
+      <li><a href="https://www.argentina.gob.ar/servicio/iniciar-un-reclamo-ante-la-direccion-nacional-de-defensa-del-consumidor-y-arbitraje-del">
+      Defensa al Consumidor</a></li>
+      <li><a href="https://vitawallet.io/terminos-y-condiciones">
+        Terminos y Condiciones</a></li>
+    </ul>
+    <app-nav-links [links]="navLinks"></app-nav-links>
+  
+  </div>
+</div>

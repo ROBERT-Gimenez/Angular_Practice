@@ -1,0 +1,110 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    color: #FAFAFB;
+    font-family: 'Barlow', sans-serif;
+   background-color: #FAFAFB;
+   background-image: linear-gradient(#362a62 0%, #433578 80%,#4f3d8e 100%);
+}
+
+.titulo,
+label,
+.olvideContra {
+    // text-shadow: 0 2px rgba(0, 0, 0, 0.651);
+}
+
+.titulo{
+    font-size: 28px;
+}
+
+.loginForm {
+     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.717);
+    width: 25rem;
+    height: 35rem;
+    padding: 35px;
+    background-image: linear-gradient( #574A8D, #36296a);
+    border-radius: 20px;
+    
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.box {
+    width: 70%;
+    border: none;
+    margin: 20px;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: EAEAEC;
+    border-radius: 4px;
+    background-color:#ffffff;
+    border-bottom: 1px solid black;
+}
+.box::placeholder{
+    color: rgb(173, 173, 173);
+}
+
+
+form input {
+    margin: 10px;
+
+}
+
+
+.loginForm .btnLogin,
+.loginForm .btnRegister {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(21, 19, 19);
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+
+
+.loginForm .btnLogin:hover,
+.loginForm .btnRegister:hover {
+    background-color: #373737;
+
+}
+
+.loginForm .btnLogin:disabled{
+    background-color: #616161;
+    cursor: auto;
+}
+
+.invalid{
+    color: red;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+app-terms-and-conditions{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.terms{
+    cursor: pointer;
+    text-decoration: underline;
+}

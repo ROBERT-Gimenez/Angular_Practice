@@ -1,0 +1,47 @@
+  <div class="div_container">
+
+    <form [formGroup]="validateForm" class="form_reset">
+      <div mat-dialog-content class="input-container">
+
+          <label for="email">Correo Electronico</label>
+          <input formControlName="email" required
+            type="email" required="email" name="email"
+            class="input_pass" placeholder="Enter Email"
+          >
+          <small class="small_error" *ngIf="validateForm.controls['email'].touched 
+          && validateForm.controls['email'].errors">
+            {{ getErrorMessage('email') }}
+          </small>
+
+          <label for="password">Contraseña</label>
+          <input formControlName="password"
+            [type]="passwordVisibility ? 'text' : 'password'"
+            class="input_pass" placeholder="Enter password"
+          >
+          <small class="small_error"*ngIf="validateForm.controls['password'].touched
+          && validateForm.controls['password'].errors">
+            {{ getErrorMessage('password') }}
+          </small>
+
+          <label for="password2">Confirme su Contraseña</label>
+          <input formControlName="password2"
+            [type]="passwordVisibility ? 'text' : 'password'"
+            class="input_pass" placeholder="Repeat password"
+          >
+          <small class="small_error"*ngIf="validateForm.controls['password2'].touched
+          && validateForm.controls['password2'].errors">
+            {{ getErrorMessage('password2') }}
+          </small>
+
+        </div>
+        
+        <div mat-dialog-actions>
+          <button mat-button (click)="closeModal()">Cancel</button>
+          <button mat-button [mat-dialog-close]="data" (click)="submitForm()" [disabled]="!validateForm.valid">Submit</button>
+        </div>
+        
+      </form>
+      <mat-icon class="icon_eye" (click)="togglePasswordVisibility()" >
+        {{passwordVisibility ? 'visibility_off' : 'visibility'}}
+      </mat-icon>
+  </div>

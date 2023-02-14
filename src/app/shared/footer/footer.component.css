@@ -1,0 +1,100 @@
+  .footer_container{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 9%;
+    place-items: center;
+    width: 90%;
+    background-color: #574a8d ;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 2px 2px 20px 0px #f889aa;
+    border: 1px solid #f889aa;
+  }
+  .logo_container {
+    text-align: -webkit-center;
+    padding-top: 10px;
+  }
+  .img_container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+  }
+  .img_container img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 50%;
+    contain: inline-size;
+    cursor: pointer;
+  }
+  .logo_container p{
+    font-weight: bold;
+  }
+  .logo_container p .mat-icon{
+    position: relative;
+    top: 13px;
+    left: 4px;
+    font-size: small;
+    font-weight: bold;
+    font-weight: bold;
+  }
+  .links_container{
+    display: flex;
+    flex-direction: column;
+  }
+  .list_conditions{
+    list-style: none;
+    position: relative;
+    right: 19%;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .list_conditions li a {
+    text-decoration: none;
+    color: snow;
+  }
+  .list_conditions li a:hover{
+    scale: 1.1;
+    text-shadow: 1px 1px #f889aa; 
+}
+.Column_Contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width:650px){
+  .img_container img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .logo_container p {
+    font-size: small;
+    width: 70%;
+  }
+  .footer_container{
+    font-size: small;
+  }
+  .list_conditions{
+    gap: 0.3rem;
+  }
+  .list_conditions li {
+    font-size: inherit;
+  }
+  
+}
+@media (max-width:450px){
+  .logo_container {
+    width: 47%;
+  }
+  .list_conditions li {
+    font-size: smaller;
+  }
+  .logo_container p{
+    font-size: smaller;
+  }
+}

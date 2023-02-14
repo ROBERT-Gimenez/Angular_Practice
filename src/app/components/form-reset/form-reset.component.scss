@@ -1,0 +1,59 @@
+
+::ng-deep.mat-dialog-container {
+  background-image: linear-gradient(to bottom, #8570dc, #d9d9d9)!important;
+  display: flex;
+  justify-content: center;
+}
+.input_pass{
+border-radius: 10px;
+width: 9.7rem;
+height: 1.3rem;
+}
+.input_pass:focus{
+  outline: none;
+  border: 2px solid #39305c;
+  box-shadow: 0 0 10px #39305c;
+}
+div.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 5%;
+}
+div.mat-dialog-actions button {
+  background-color: #f1f1f1;
+}
+.small_error{
+  color: red;
+  font-family: math;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  text-align: -webkit-center;
+}
+.form_reset{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form_reset label {
+  -webkit-text-stroke-width: thin;
+  font-family: math;
+}
+.div_container{
+  display: flex;
+}
+.icon_eye{
+  position: relative;
+  left: 10%;
+  cursor: pointer;
+}
+.icon_eye:hover{
+  scale: 1.1;
+  filter:drop-shadow( 
+   2px 2px 2px wheat
+  )  
+}

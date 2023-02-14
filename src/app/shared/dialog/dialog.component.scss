@@ -1,0 +1,19 @@
+::ng-deep .mat-dialog-container {
+    border-radius: 20px !important;
+    height: 400px;
+    width: 600px;
+    display: flex; 
+    flex-direction: column;
+    .mat-dialog-actions {
+        text-align: center;
+        align-items: flex-end;
+        .mat-button{
+            background-color: #433578;
+            color: #FFFFFF;
+        }
+        .mat-button:hover{
+            background-color: #b0b0b0;
+            color: #000000;
+        }
+    }
+}
