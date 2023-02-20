@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Transferencia } from 'src/app/core/interfaces/transferencia.interface';
 import { TransactionsService } from 'src/app/core/services/transactions.service';
-
 @Component({
   selector: 'app-egresos',
   templateUrl: './egresos.component.html',
-  styleUrls: ['./egresos.component.scss']
+  styleUrls: ['../ingresos/ingresos.component.scss']
 })
 export class EgresosComponent implements OnInit {
 
-  data?: any;
+  data?: Transferencia[];
 
   constructor(private transactionsService: TransactionsService ) {}
 
@@ -21,6 +21,11 @@ export class EgresosComponent implements OnInit {
     });
   }
 
- 
+  editConcepto(){
+    alert("editar concepto")
+  }
 
+  pay(){
+    alert("Pagar o Retirar")
+  }
 }

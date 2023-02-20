@@ -23,10 +23,9 @@ export class MenuBarService {
     {title:"Home", icon:"home", route:"home"},
     {title:"Ingresos", icon:"attach_money", route:"ingresos"},
     {title:"Egresos", icon:"trending_down", route:"egresos"},
-    {title:"Enviar Dinero", icon:"trending_up", route:"**"},
     {title:"Plazos Fijos", icon:"insert_chart", route:"**"},
-    {title:"Contactos", icon:"contact_page", route:"**"},
-    {title:"Billeteras", icon:"account_balance_wallet", route:"**"}
+    {title:"Contactos", icon:"contact_page", route:"contact"},
+    {title:"Billeteras", icon:"account_balance_wallet", route:"wallet"}
    
   ]
 

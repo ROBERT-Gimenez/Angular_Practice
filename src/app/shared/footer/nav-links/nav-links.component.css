@@ -1,6 +1,7 @@
 .Links_Container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-right: 1rem;
 }
 .links_footer{
     text-decoration: none;
@@ -30,7 +31,8 @@
     .Links_Container{
         position: relative;
         justify-content: space-evenly;
-        right: 10%;
+        right: 8%;
+        margin-right:0 ;
     }
     .links_footer{
       font-size: 20px;

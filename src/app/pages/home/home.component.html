@@ -1,3 +1,61 @@
-<app-title></app-title>
+
+
+<div class="container">
+    
+     
+    <section class="dates">
+        
+
+        <article class="information">
+            <div class="movements">
+             <p class="text">Ultimos movimientos:</p>
+             <div class="cards">
+                
+                <div class="textSaldo" *ngIf="infoAcountPayment">
+                    <div class="title">
+                        <h3>Egreso</h3>
+                    </div> 
+                    <p>Numero de transaccion : {{infoAcountPayment[0]?.id}}</p>
+                    <p>Fecha: {{infoAcountPayment[0]?.createdAt | date: 'short' }}</p>
+                    <p>Cantidad : <span style="color:yellow">-{{infoAcountPayment[0]?.amount | currency}}</span> </p>
+                </div>
+
+                <div class="textSaldo" *ngIf="infoAcountTopUp"> 
+                    <div class="title">
+                        <h3>Ingreso</h3>
+                    </div> 
+                    <p>Numero de transaccion: {{infoAcountTopUp[0]?.id}}</p>
+                    <p>Fecha: {{infoAcountTopUp[0]?.createdAt | date: 'short' }}</p>
+                    <p>Cantidad : <span style="color:rgb(0, 255, 68)">{{infoAcountTopUp[0]?.amount | currency }}</span></p>
+                </div>
+                
+             </div>
+
+            </div>
+        </article>
+        <div class="banner">
+            <img src="banner4.jpg" >
+        </div>
+    </section>
+
+    <section class="acount">
+        <div class="header">
+            <div class="containerImg" >
+                <div class="img">
+                </div>
+            </div>
+            <h3 *ngIf="dataUser">{{dataUser.first_name}} {{dataUser.last_name}}</h3>
+        </div>
+
+        <div class="main">
+            <p class="saldo">Puntos en la cuenta :</p>
+            <p class="saldo" *ngIf="dataUser"> {{dataUser.points}}</p>
+
+        </div>
+
+    </section>
+</div>
+
+
 
 

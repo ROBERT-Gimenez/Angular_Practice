@@ -17,8 +17,8 @@ const baseUrl = environment.URL_BASE
 export class PerfilComponent implements OnInit {
 
 
-
-  canEdit:boolean = false
+//cambiar a false
+  canEdit:boolean = false;
 
   userData :User ={
     first_name: '',
@@ -33,13 +33,6 @@ export class PerfilComponent implements OnInit {
     last_name : ['',Validators.required],
     email : ['',Validators.required],
   })
-
-
-  // recoverPassword = this.formBuilder.group({
-  //   email : ['',Validators.required],
-  //   password:['asdasd',Validators.required],
-  //   repeatPassword:['',Validators.required],
-  // },{Validators: samePasswords})
 
 
 

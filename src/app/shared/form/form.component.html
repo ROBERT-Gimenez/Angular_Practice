@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+  <mat-form-field appearance="outline">
+      <mat-label>Monto</mat-label>
+      <input matInput type="number" formControlName="monto" placeholder="0.00">
+  </mat-form-field>
+  <div *ngIf="form.get('monto')?.touched && form.get('monto')?.errors?.['required']" class="invalid">El monto es requerido.</div>
+  <div *ngIf="form.get('monto')?.invalid && form.get('monto')?.touched" class="invalid">El monto debe ser mayor o igual a 1.</div>
+
+  <mat-form-field appearance="outline">
+      <mat-label>Concepto</mat-label>
+      <textarea style="resize: none;" matInput #textarea formControlName="concepto" maxlength="50" placeholder="Escribe el concepto de la operación.."></textarea>
+      <mat-hint align="end">{{textarea.value.length}}/50</mat-hint>
+  </mat-form-field>
+  <div *ngIf="form.get('concepto')?.touched && form.get('concepto')?.errors?.['required']" class="invalid">El concepto es requerido.</div>
+
+  <mat-form-field appearance="outline"> 
+    <mat-label>Fecha</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="fecha" placeholder="DD/MM/YYYY">
+    <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="isEdition"></mat-datepicker-toggle>
+    <mat-datepicker #picker color="primary"></mat-datepicker>
+  </mat-form-field>
+  <div *ngIf="form.get('fecha')?.touched && form.get('fecha')?.errors?.['required']" class="invalid">La fecha es requerida.</div>
+
+  <div class="buttons">
+    <button (click)="submit()">Anadir</button>
+    <button (click)="close()">Cerrar</button>
+  </div>
+
+</form>
+  

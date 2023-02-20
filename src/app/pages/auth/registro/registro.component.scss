@@ -1,99 +1,67 @@
 .contenedor {
     display: flex;
     justify-content: center;
+    
     height: 100vh;
     align-items: center;
     text-align: center;
-    color: #FAFAFB;
+   
     font-family: 'Barlow', sans-serif;
-   background-color: #FAFAFB;
-   background-image: linear-gradient(#362a62 0%, #433578 80%,#4f3d8e 100%);
 }
 
-.titulo,
-label,
-.olvideContra {
-    // text-shadow: 0 2px rgba(0, 0, 0, 0.651);
-}
 
 .titulo{
-    font-size: 28px;
+    color: black;
+    font-size: 36px;
 }
 
-.loginForm {
-     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.717);
-    width: 25rem;
-    height: 35rem;
+.registerForm {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.717);
+    width: 30rem;
+    height: 32rem;
     padding: 35px;
-    background-image: linear-gradient( #574A8D, #36296a);
+    background-color: #fafafb;
     border-radius: 20px;
-    
-    
+
+
 }
 
 form {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
 
 
-.box {
-    width: 70%;
-    border: none;
-    margin: 20px;
-    margin-bottom: 50px;
-    padding: 10px;
-    background-color: EAEAEC;
-    border-radius: 4px;
-    background-color:#ffffff;
-    border-bottom: 1px solid black;
-}
-.box::placeholder{
-    color: rgb(173, 173, 173);
-}
 
 
-form input {
-    margin: 10px;
 
-}
-
-
-.loginForm .btnLogin,
-.loginForm .btnRegister {
+.registerForm .btnRegister {
+    width: 100%;
     border: none;
     padding: 10px;
     cursor: pointer;
     background-color: rgb(21, 19, 19);
     text-decoration: none;
     color: white;
-    font-size: 0.9rem;
-    margin: 5px;
+    font-size: 1.5rem;
+    margin-top: 25px;
     border-radius: 15px;
-    font-size: 16px;
+
+    font-weight: 600;
 }
 
 
 
-.loginForm .btnLogin:hover,
-.loginForm .btnRegister:hover {
+
+.registerForm .btnRegister:hover {
     background-color: #373737;
 
 }
 
-.loginForm .btnLogin:disabled{
+.registerForm .btnRegister:disabled{
     background-color: #616161;
     cursor: auto;
-}
-
-.invalid{
-    color: red;
-    margin: 0;
-    padding: 0;
-    
 }
 
 
@@ -105,6 +73,22 @@ app-terms-and-conditions{
 }
 
 .terms{
+
+    color: black;
     cursor: pointer;
-    text-decoration: underline;
+
+}
+
+.invalidTerms {
+    position: absolute;
+    color: rgb(255, 4, 4);
+    font-size: 1rem;
+}
+
+input:focus{
+    outline: none;
+}
+
+.tengoCuenta{
+    margin-top: 10px;
 }

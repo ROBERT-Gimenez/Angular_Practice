@@ -1,15 +1,17 @@
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpHeaders } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { catchError, delay, finalize, Observable, tap, throwError } from 'rxjs';
 import { AlertsComponent } from 'src/app/shared/alerts/alerts.component';
 import { Alert } from '../../interfaces/alerts.interface';
+import { loading } from '../../state/loader/loader.actions';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private store :Store) {}
 
   data : Alert = {
     err:'Error',
@@ -23,40 +25,59 @@ export class AuthInterceptor implements HttpInterceptor {
       data:this.data
     });
   }
-
+ 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const token = localStorage.getItem('token');
-    if (token) {
-        const cloned = req.clone({
+    const showErrorMsg = req.headers.get('X-Show-Error-Msg') !== 'false';
+  
+    const reqCloned = req.clone({
+      headers: req.headers.set('Authorization', `Bearer ${token}`)
+    });
+  
+    return next.handle(reqCloned).pipe(
+      tap(() => {
+        this.store.dispatch(loading({ isloading: true }));
+      }),
+      catchError((err: any) => {
+        const msg = err.message;
+        if (showErrorMsg) {
+          this.openDialog();
+        }
+        return throwError(msg);
+      }),
+      finalize(() => {
+        this.store.dispatch(loading({ isloading: false }));
+      })
+    );
+  }
+}
+/*   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+    const token = localStorage.getItem('token');
+
+    const reqCloned = req.clone({
           headers: req.headers.set('Authorization', `Bearer ${token}`)
-        });
-        return next.handle(cloned).pipe(
+    });
+
+    return next.handle(reqCloned).pipe(
+          tap( (__) => {
+            this.store.dispatch(loading({isloading:true}))
+          }),
           catchError( (err:any) => {
           const msg = err.message
-          console.error(msg)
-
           this.openDialog()
-
           return throwError(msg)
-          } )
+          } ),
+          finalize( () => 
+            this.store.dispatch(loading({isloading:false}))
+          )
         );
-    }
-    else {
-      return next.handle(req).pipe(
-        catchError( (err:any) => {
-        const msg = err.message
-        console.error(msg)
 
-        this.openDialog()
-
-        return throwError(msg)
-        } )
-      );
-    }
   }
 
 }
 
+ */
 
 

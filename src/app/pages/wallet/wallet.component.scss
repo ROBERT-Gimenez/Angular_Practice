@@ -1,0 +1,206 @@
+.container {
+    width: 90%;
+    height: 700px;
+    display: flex;
+    box-shadow: 2px 2px 20px 4px #0000008a;
+    border-radius: 10px;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    background-color: rgba(31, 31, 52, 0.711);
+}
+
+.saldo {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+
+    h3 {
+        color: white;
+        font-size: 30px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    mat-icon {
+        cursor: pointer;
+        color: white;
+    }
+
+}
+
+
+.lastEvent {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    background-image: url('Wallet-cuate\ \(1\).png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+
+
+}
+
+.h3Tipy {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-shadow: 1px 2px 20px black;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.eventForm {
+    position: absolute;
+    height: 250px;
+    width: 320px;
+    background-color: rgb(254, 252, 252);
+    margin: auto;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .header {
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+        background-color: #472560;
+        color: white;
+        height: 40px;
+
+        h4 {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    button {
+        color: #FAFAFB;
+        font-size: 20px;
+    }
+
+    .alert {
+        margin-top: 10px;
+        color: rgb(179, 158, 0);
+        font-size: 15px;
+        font-family: sans-serif;
+    }
+}
+
+.main {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.operation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    height: 100%;
+}
+
+.numbers {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 80%;
+    height: 60px;
+    background-color: white;
+
+    p {
+        text-align: center;
+        width: 100%;
+        word-spacing: 20px;
+        margin: 0;
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(102, 89, 168);
+    }
+}
+
+.operationsMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+
+
+
+    h4,
+    h5 {
+        color: rgb(252, 253, 255);
+        font-weight: bold;
+    }
+
+    #mapa {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media (min-width:500px) {
+
+    .container {
+        width: 50%;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+
+}
+
+
+.buttons {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+
+    button {
+        border-radius: 10px;
+        border: none;
+        width: 5.5rem;
+       
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .5s all ease;
+        perspective: 900px;
+        animation: entry 1s linear 1;
+    }
+
+    button:hover {
+        transform: rotate(0deg) scale(1) translateY(-7px);
+        transition: .5s all ease;
+        z-index: 400;
+    }
+}
+

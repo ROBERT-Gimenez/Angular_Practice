@@ -1,7 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+$gradiant:linear-gradient(90deg,#5f46c3,#9f89f8,#6d39d4,);
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{background:transparent;}
+
+div.fondo{
+    width: 100%;
+    height: 115vh;
+    position: absolute;
+    margin: 0 auto;
+    display: flex;
+    top: 0;
+    background: transparent;
+    z-index: -1;
+    
+}
+div.glass{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    display: flex;
+    z-index: -1;
+    top: 0;
+    // backdrop-filter: blur(31px);
+
+}
+div.cortina{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    display: flex;
+    z-index: -2;
+    background-color: #202124;
+    top: 0;
+    
+}
+div.elem1{
+    width: 10rem;
+    height: 9rem;
+    background-color: rgb(143, 21, 219);
+    display: flex;
+    z-index: -2;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    border-radius: 50%;
+    box-shadow: 0 0 70px 90px rgba(143, 21, 219);
+    animation: move 20s infinite ease-out;
+    transform: translate(-50%, -50%) translateX(40px);
+}
+div.elem2{
+    width: 9rem;
+    height: 10rem;
+    background-color: rgb(255, 36, 219);
+    display: flex;
+    z-index: -2;
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    border-radius: 50%;
+    box-shadow: 0 0 70px 90px rgba(255, 36, 219);
+    animation:  move2 20s infinite ease-in;
+
+}
+
+@keyframes move2 {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translate(250px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translate(250px) rotate(-360deg);
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(-50%, -50%) translateX(150px) rotate(0deg) translate(200px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(150px) rotate(360deg) translate(200px) rotate(-360deg);
+    }
+  }
+
+
+@media (max-width:950px) {
+    div.fondo{
+      min-height: 115vh;
+      height: 100%;
+      max-width: 100vh;
+    }
+}
+@media (max-width:550px) {
+    body{
+       /*  background-image:linear-gradient(90deg,#5f46c3,#9f89f8,#6d39d4); */
+       background: transparent;
+    }
+    div.fondo{
+      margin-top: 56px;
+      min-height: 115vh;
+      max-width: 100vh;
+      // height: 130vh;
+    }
+}
+
+
+
+

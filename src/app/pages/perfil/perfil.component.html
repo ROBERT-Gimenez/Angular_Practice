@@ -1,89 +1,94 @@
 
-<div class="background">
-    <div class="card">
-        <div class="header">
-            <div class="containerImg">
-               <div class="img">
-               </div>
+<div class="container">
+    <div class="background">
+        <div class="card">
+            <div class="header">
+                <div class="containerImg">
+                   <div class="img">
+                   </div>
+                </div>
+                <div>
+                    <h2 class="title" style="color:white">Bienvenido {{userData.first_name }}</h2>
+                </div>
             </div>
-            <div>
-                <h2 class="title">Bienvenido {{userData.first_name }}</h2>
-            </div>
-        </div>
-
-        <div class="main">
-            <h2 class="title edit"
-                (click)="changeEdit()">Editar perfil
-                <mat-icon aria-hidden="false"
-                         color="primary"
-                         fontIcon="edit_note"
-                         >
-                </mat-icon>
-            </h2>
-
-            <form class="formContainer">
-                
-                <div class="inputContainer">
-                    <label for="name">Nombre</label>
-                    <div class="border">
-                        <mat-icon aria-hidden="false"
-                         color="primary"
-                         fontIcon="account_circle"></mat-icon>
-                        <input type="text" id="name" [value]="userData.first_name"
-                        [disabled]="!canEdit"> 
+    
+            <div class="main">
+                <h2 class="title edit"
+                    (click)="changeEdit()">Editar perfil
+                    <mat-icon aria-hidden="false"
+                             color="primary"
+                             fontIcon="edit_note"
+                             >
+                    </mat-icon>
+                </h2>
+    
+                <form class="formContainer">
+                    
+                    <div class="inputContainer">
+                        <label for="name">Nombre</label>
+                       
+                           
+                            <div class="border">
+                                <mat-icon aria-hidden="false"
+                            color="primary"
+                            fontIcon="account_circle"></mat-icon>
+                                <input type="text" id="name" [value]="userData.first_name"
+                                [disabled]="!canEdit"> 
+                            </div>
+                        
                     </div>
-                </div>
-
-                <br> 
-
-                <div class="inputContainer">
-                    <label for="name">Apellido</label>
-                    <div class="border">
-                        <mat-icon aria-hidden="false"
-                         color="primary"
-                         fontIcon="account_circle"></mat-icon>
-                        <input type="text"
-                        [value]="userData.last_name"
-                        [disabled]="!canEdit"> 
+    
+                    <br> 
+    
+                    <div class="inputContainer">
+                        <label for="name">Apellido</label>
+                        <div class="border">
+                            <mat-icon aria-hidden="false"
+                             color="primary"
+                             fontIcon="account_circle"></mat-icon>
+                            <input type="text"
+                            [value]="userData.last_name"
+                            [disabled]="!canEdit"> 
+                        </div>
                     </div>
-                </div>
-
-                <br> 
-
-                <div class="inputContainer">
-                    <label for="name">Email</label>
-                    <div class="border">
-                        <mat-icon aria-hidden="false"
-                         color="primary"
-                         fontIcon="mail"></mat-icon>
-                        <input type="email" [value]="userData.email"
-                        [disabled]="!canEdit"> 
+    
+                    <br> 
+    
+                    <div class="inputContainer">
+                        <label for="name">Email</label>
+                        <div class="border">
+                            <mat-icon aria-hidden="false"
+                             color="primary"
+                             fontIcon="mail"></mat-icon>
+                            <input type="email" [value]="userData.email"
+                            [disabled]="!canEdit"> 
+                        </div>
                     </div>
-                </div>
-
-                <br> 
-
-              
-
-            </form>
-
-            <button mat-flat-button 
-            color="primary" 
-            [disabled]="!canEdit"
-            (click)="openModal()">
-            Editar Password</button>
-
-            
-        </div>
-        
-        <button mat-raised-button color="primary" 
+    
+                    <br> 
+    
+                  
+    
+                </form>
+    
+                <button mat-flat-button 
+                color="primary" 
+                [disabled]="!canEdit"
+                (click)="openModal()">
+                Editar Password</button>
+    
+                <button mat-raised-button color="primary" 
                 class="margin-top" 
                 [disabled]="!canEdit">Guardar</button>
-
-
-
+            </div>
+            
+           
+    
+    
+    
+        </div>
+    
     </div>
-
 </div>
 
 <ng-template #modalContent let-modal>

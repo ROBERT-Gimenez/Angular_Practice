@@ -1,4 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { loader, loading } from '../../core/state/loader/loader.actions';
+import { selectLoader } from '../../core/state/loader/loader.selector';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -8,11 +13,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LoadingComponent implements OnInit {
 
-  @Input() loading: boolean = true;
+loading$: Observable<boolean> = new Observable()
 
-  constructor() { }
 
+  constructor( private store: Store<any>) {
+    this.loading$ = this.store.select(selectLoader)
+
+    // this.store.dispatch(loading({isloading:false}))
+  }
+  
   ngOnInit(): void {
+   
   }
 
 }

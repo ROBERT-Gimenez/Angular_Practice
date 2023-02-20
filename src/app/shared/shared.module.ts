@@ -1,16 +1,22 @@
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { SharedRoutingModule } from './shared-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from './material/material.module';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { LoadingComponent } from './loading/loading.component';
 import { TitleComponent } from './title/title.component';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { NavLinksComponent } from './footer/nav-links/nav-links.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { DivisasComponent } from '../components/divisas/divisas.component';
+import { TipoCambioComponent } from '../components/tipo-cambio/tipo-cambio.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { FormComponent } from './form/form.component';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +26,18 @@ import { DialogComponent } from './dialog/dialog.component';
     FooterComponent,
     NavLinksComponent,
     AlertsComponent,
+    DialogComponent,
+    FormComponent,
+    DivisasComponent,
+    TipoCambioComponent,
     DialogComponent
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     MaterialModule,
@@ -36,7 +47,8 @@ import { DialogComponent } from './dialog/dialog.component';
     TitleComponent,
     FooterComponent,
     AlertsComponent,
-    DialogComponent
+    DialogComponent,
+    FormComponent
   ]
 })
 export class SharedModule { }

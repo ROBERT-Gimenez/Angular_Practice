@@ -45,10 +45,11 @@
     font-size: 52px;
     text-align: center;
     width: 100%;
-    color: slateblue;
+    color: #6c63ff;
     font-weight: 500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.7s ease-in-out forwards;
+    text-shadow: 2px 2px 2px #000;
+/*      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+ */    animation: slideIn 0.7s ease-in-out forwards;
 }
 
 @keyframes slideIn {

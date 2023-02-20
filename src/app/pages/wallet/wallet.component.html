@@ -1,0 +1,77 @@
+<div class="container">
+
+    <div class="saldo" *ngIf="canSee">
+        <h3> {{money | currency}}  </h3> <mat-icon (click)="changeView()">visibility</mat-icon>
+       
+    </div>
+
+    <div class="saldo" *ngIf="!canSee">
+        <h3>$ *** </h3> <mat-icon (click)="changeView()">visibility_off</mat-icon>
+    </div>
+    
+    <div class="buttons">
+        <button (click)="openForm('ingresar')">Ingresar Dinero</button>
+        <button [disabled]="true" style="cursor:no-drop;">Transferir dinero</button>
+        <button (click)="openForm('extraer')">Sacar efectivo</button>
+    </div>
+
+    <div class="lastEvent" *ngIf="!numberOperations">
+        <h3 class="h3Tipy"> No hay operaciones pendientes</h3>
+    </div>
+
+    <div class="operation" *ngIf="numberOperations">
+        <h3 class="h3Tipy"> Numero de operacion</h3>
+        <div class="numbers">
+            <p>{{numberOperations}}</p>
+        </div>
+        <div class="operationsMain">
+            <h4 class="alert">
+                Indicale el numero a la cajera
+            </h4>
+
+            <h5>
+                Podes ir a cualquiera de nuestras sucursales
+            </h5>
+
+            <div #mapa id="mapa" >
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="eventForm" *ngIf="canViewForm">
+        <div class="header">
+            <h4>Seleccione la cantidad a {{info}}</h4>
+        </div>
+        <div class="main">
+
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Cantidad</mat-label>
+                <input matInput type="number" class="example-right-align" placeholder="0" #price>
+               
+              </mat-form-field>
+
+
+            <span class="alert" *ngIf="info === 'ingresar'">*Solo disponible en efectivo</span>
+            <span class="alert" *ngIf="isInsufficient">*Fondos insuficientes</span>
+            <div class="buttons">
+    
+                <button mat-flat-button color="primary"  (click)="addEvent(price)" 
+                *ngIf="info === 'ingresar'">
+                Aceptar</button>
+                <button mat-flat-button color="primary"  (click)="extract(price)"
+                *ngIf="info !== 'ingresar'">
+                    Aceptar</button>
+    
+                <button (click)="closedForm()" mat-flat-button color="warn">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

@@ -44,11 +44,11 @@
     
         <hr>
     
-        <div class="sideBarBottom">
-            <div class="hover">
-                <mat-icon routerLinkActive="active" 
-                        (click)="logout()"
-                        routerLink="/login">
+       
+        <div class="sideBarBottom" (click)="logout()"
+        routerLink="/login">
+            <div class="hover" >
+                <mat-icon routerLinkActive="active" >
                     {{menuBottom.icon}}
                 </mat-icon>
                 <p >{{menuBottom.title}}</p>
@@ -91,11 +91,10 @@
     
         <hr>
     
-        <div class="sideBarBottom">
-            <div class="hover">
-                <mat-icon routerLinkActive="active" 
-                        (click)="logout()"
-                        routerLink="/login">
+        <div class="sideBarBottom" (click)="logout()"
+        routerLink="/login">
+            <div class="hover" >
+                <mat-icon routerLinkActive="active" >
                     {{menuBottom.icon}}
                 </mat-icon>
                 <p >{{menuBottom.title}}</p>

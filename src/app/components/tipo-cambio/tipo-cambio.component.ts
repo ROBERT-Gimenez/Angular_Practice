@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -8,10 +8,9 @@ import { HttpService } from 'src/app/core/services/http.service';
 })
 export class TipoCambioComponent implements OnInit {
   
-  public compra:string | undefined;
-  public venta:string | undefined ;
-  public tipo:string | undefined;
-  
+  compra !:number
+  venta!:number
+  tipo!:string
   constructor(private http: HttpService) { 
 
   }
@@ -27,16 +26,16 @@ export class TipoCambioComponent implements OnInit {
         
     //   }
     // })
- 
-
     fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
     .then((data) => {
       data.json()
-      .then(res =>{
-        console.log(res);
-        this.compra = "Compra: $"+res[1].casa.compra
-        this.venta = "Venta: $"+res[1].casa.venta
-        this.tipo = res[1].casa.nombre
+      .then(res =>{ 
+
+        this.compra = res[1].casa.compra
+
+        this.venta =res[1].casa.venta
+   
+        this.tipo =res[1].casa.nombre
       })
     })
   }

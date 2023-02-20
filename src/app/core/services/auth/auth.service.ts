@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { HttpService } from '../http.service';
 import { Store } from '@ngrx/store';
 import { logout } from '../../state/auth/auth.actions';
+import { User } from '../../state/auth/interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,10 @@ export class AuthService {
   logout(){
     localStorage.removeItem('token');
     
+  }
+
+  userDates(){
+    return this.httpClient.get<User>(`${environment.URL_BASE}/auth/me`)
   }
 
 }

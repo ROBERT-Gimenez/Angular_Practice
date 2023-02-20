@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   public emailInvalid = false;
   public passwordInvalid = false;
-
+  invalidEmailOrPassword = false;
   user! : User;
 
   loginForm = this.fb.group({
@@ -33,18 +33,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public onSubmit() {
-    if (!this.loginForm.valid) {
-      Object.values(this.loginForm.controls).forEach(control => {
-        control.markAllAsTouched();
-      })
-    } else {
-      console.log('Usuario valido')
-    }
-  }
 
   login(){
-    console.log(this.loginForm.value);
     const user: User = {
       email : this.loginForm.value.email ?? '',
       password: this.loginForm.value.password ?? ''
@@ -58,8 +48,13 @@ export class LoginComponent implements OnInit {
       next:(res:any) =>{
         this.router.navigateByUrl('/dashboard/home')
         localStorage.setItem('token',res.accessToken)
+       
       },
-      error: err =>{console.log(err)}
+      error: err =>{console.log(err)
+      this.invalidEmailOrPassword = true;
+
+      }
     })
+
   }
 }

@@ -1,1 +1,1 @@
-<div *ngIf="loading"><mat-spinner></mat-spinner></div>
+<div *ngIf="loading$ | async" class="spinner"><mat-spinner [color]="'accent'" ></mat-spinner></div>

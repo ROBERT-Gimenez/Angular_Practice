@@ -1,43 +1,49 @@
-  <div class="div_container">
 
-    <form [formGroup]="validateForm" class="form_reset">
+  <div class="div_container">
+   
+    <form [formGroup]="validateForm" class="form_reset" >
       <div mat-dialog-content class="input-container">
 
-          <label for="email">Correo Electronico</label>
-          <input formControlName="email" required
+        <mat-form-field appearance="fill">
+          <mat-label for="email">Correo Electronico</mat-label>
+          <input matInput formControlName="email" required
             type="email" required="email" name="email"
-            class="input_pass" placeholder="Enter Email"
-          >
-          <small class="small_error" *ngIf="validateForm.controls['email'].touched 
+             placeholder="Enter Email">
+          <mat-error  *ngIf="validateForm.controls['email'].touched 
           && validateForm.controls['email'].errors">
             {{ getErrorMessage('email') }}
-          </small>
+          </mat-error>
+        </mat-form-field>
 
-          <label for="password">Contraseña</label>
-          <input formControlName="password"
+        <mat-form-field appearance="fill">
+          <mat-label for="password">Contraseña</mat-label>
+          <input matInput formControlName="password"
             [type]="passwordVisibility ? 'text' : 'password'"
-            class="input_pass" placeholder="Enter password"
+            placeholder="Enter password"
           >
-          <small class="small_error"*ngIf="validateForm.controls['password'].touched
+          <mat-error *ngIf="validateForm.controls['password'].touched
           && validateForm.controls['password'].errors">
             {{ getErrorMessage('password') }}
-          </small>
-
-          <label for="password2">Confirme su Contraseña</label>
-          <input formControlName="password2"
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label for="password2">Confirme su Contraseña</mat-label>
+          <input matInput formControlName="password2"
             [type]="passwordVisibility ? 'text' : 'password'"
-            class="input_pass" placeholder="Repeat password"
+             placeholder="Repeat password"
           >
-          <small class="small_error"*ngIf="validateForm.controls['password2'].touched
+          <mat-error *ngIf="validateForm.controls['password2'].touched
           && validateForm.controls['password2'].errors">
             {{ getErrorMessage('password2') }}
-          </small>
+          </mat-error>
+        </mat-form-field>
 
         </div>
         
         <div mat-dialog-actions>
-          <button mat-button (click)="closeModal()">Cancel</button>
-          <button mat-button [mat-dialog-close]="data" (click)="submitForm()" [disabled]="!validateForm.valid">Submit</button>
+          <button mat-button class="close_modal" (click)="closeModal()">Cancelar</button>
+          <button mat-raised-button color="accent" class="btn_submit" [mat-dialog-close]="data" (click)="submitForm()" [disabled]="!validateForm.valid"
+           type="submit">Aceptar</button>
         </div>
         
       </form>
