@@ -7,42 +7,17 @@
     <ng-container *ngFor="let item of data">
   
     <article class="accordion-panel" >
-        <input class="input_movement" type="radio" id="{{item.id}}"
+        <input class="input_movement" type="radio" id="{{item?.id}}"
         name="accordion"  />
-        <label  for="{{item.id}}">
+        <label  for="{{item?.id}}">
        <div class="amountContainer">
-        {{ item.updatedAt  | date: 'short' }} <br> 
+        {{ item?.first_name}} <br> 
         <p >
-          {{item.amount | currency }}
+          ID:{{item?.id }}
         </p>
        </div>
-        <mat-icon class="open">expand_more</mat-icon>
-          
-            <div id="cerrar_art" class="accordion-cerrar">
-              <input type="radio" id="cerrar"
-              name="accordion" 
-              />
-              <label for="cerrar" class="label_cerrar">
-              <mat-icon class="close">expand_less</mat-icon>
-              </label>
-            </div>
-  
-        </label>
-    
-        <div class="accordion-body">
-          <span class="accordion-answer">N°Transf : {{ item.id }}</span><br>
-          <span class="accordion-answer">Monto: {{item.amount | currency }}</span><br>
-          <span class="accordion-answer">Fecha/h : {{ item.updatedAt  | date: 'short' }}</span><br>
-          <span class="accordion-answer">N° de Cuenta:{{ item.to_account_id}}</span><br>
-          <span class="accordion-answer">Concepto : {{ item.concept }}</span><br>
-          <span class="accordion-answer">Transaccion : {{ item.type }} (Recarga)</span><br>
-          <div class="btn_container">
-            <br>
-            <!-- <button class="btn_edit" (click)="editConcepto()"><mat-icon>edit</mat-icon>Editar</button>  -->
-          </div>
-        </div>
-      
-  
+       <button class="enviar_plata" (click)="envio()"><mat-icon>payments</mat-icon>Enviar </button>
+        </label> 
     </article>
   
   </ng-container>
@@ -56,29 +31,29 @@
   <div class="containerMuestra" *ngIf="addInport">
     <div class="card">
         <div class="main">
-            <form  class="form_reset" >
+            <form [formGroup]="form" class="form_reset" >
                 <h3>Añadir Contacto</h3>
                 <div class="inputs_container">
 
                     <mat-form-field appearance="fill">
-                        <mat-label for="email">Nombre de Usuario</mat-label>
+                        <mat-label for="Nombre">Nombre de Usuario</mat-label>
                         <input matInput formControlName="Nombre" required
-                        type="text" required="text" name="Nombre"
+                        type="text" name="Nombre" 
                         placeholder="Nombre">
                     </mat-form-field>
                     
                     <mat-form-field appearance="fill">
-                        <mat-label for="email">Apellido de Usuario</mat-label>
+                        <mat-label for="Apellido">Apellido de Usuario</mat-label>
                         <input matInput formControlName="Apellido" required
-                        type="text" required="text" name="Apellido"
+                        type="text"  name="Apellido" 
                         placeholder="Apellido">
                     </mat-form-field>
                     
                 </div>
-                  <div mat-dialog-actions>
-                    <button mat-button class="close_modal" >Cancelar</button>
-                    <button mat-raised-button color="accent" class="btn_submit" [mat-dialog-close]="data"  
-                     type="submit">Aceptar</button>
+                  <div class="btns" mat-dialog-actions>
+                    <button mat-button class="close_modal" (click)="openAndClose()" >Cancelar</button>
+                    <button mat-button class="btn_submit" 
+                    type="submit" (click)="addContact()" [disabled]="!form.valid">Aceptar</button>
                   </div>
                   
                 </form>

@@ -17,6 +17,8 @@ export class RegistroComponent implements OnInit {
     last_name:['',Validators.required],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
+    roleId:[2],
+    points:[0],
     terms:[false, Validators.requiredTrue]
   });
 

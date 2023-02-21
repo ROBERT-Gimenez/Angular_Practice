@@ -2,7 +2,7 @@
     max-width: 980px;
     margin-inline: auto;
     background: transparent;
-    padding: 100px 15px;
+   /*  padding: 100px 15px; */
     border-radius: 10px;
 }
 
@@ -45,10 +45,7 @@ hr{
     transition: color 0.25s;
     font-size: 20px;
 }
-// .accordion label:hover,
-// .accordion input:checked + label {
-//     color: #73ff82;
-// }
+
 
 .amountContainer{
     min-width: 170px;
@@ -154,33 +151,24 @@ hr{
         justify-content: center;
         align-items: center;
         cursor: pointer;
-
         transition: .5s all ease;
         perspective: 900px;
         box-shadow: 0px 20px 50px #555;
         animation: entry 1s linear 1;
     }
 
-    .btn_added:hover {
+    .btn_added:hover , .close_modal:hover , .btn_submit:hover {
         transform: rotate(0deg) scale(1) translateY(-7px);
         transition: .5s all ease;
         z-index: 400;
     }
 
-    @media (max-width:390px){
-        .btn_edit{
-            position: initial;
-            margin-right: 5px;
-            margin-top: 1rem;
-        }
+    label.label_cerrar{
+        width: 100%;
     }
-label.label_cerrar{
-    width: 100%;
-}
-
-
-$shadowBox:-2px 3px 20px 4px #453a74;
-
+    
+    $shadowBox:-2px 3px 20px 4px #453a74;
+    
 
 
 .card{
@@ -214,7 +202,7 @@ $shadowBox:-2px 3px 20px 4px #453a74;
     width: 100%;
     background-color: rgb(220, 202, 255);
     height: 100%;
-    border-radius: 0 0 31px 31px;
+    border-radius: 10px;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -224,20 +212,77 @@ $shadowBox:-2px 3px 20px 4px #453a74;
     margin-top: 0;
 }
 
-@media (min-height:500px) {
-    .container{
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-    
-}
 
 .inputs_container{
     display: flex;
     gap: 1rem
 }
 .form_reset h3 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-family: ui-sans-serif;
+    width: 100%;
+    background-color: #4b007a;
+    position: relative;
+    bottom: 2rem;
+    border-radius: 10px 10px 0 0;
+    font-size: x-large;
+    font-weight: bold;
+    color: #ffffff;
 }
+.main form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    border-radius: 10px;
+}
+.close_modal , .btn_submit{
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s all ease;
+    perspective: 900px;
+    box-shadow: 0px 20px 50px #555;
+    animation: entry 1s linear;
+
+}
+.btn_submit{
+background-color: lightgreen;
+}
+.close_modal{
+background-color: #F889AA;
+}
+.enviar_plata{
+    border-radius: 10px;
+    border: none;
+    width: 5.5rem;
+    position: relative;
+    background-color: lightgreen;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 20px 50px #555;
+}
+.btns{
+    display: flex;
+    gap: 1rem;
+}
+@media (max-width:650px) {
+    .card{
+        width: 90%;
+    }
+    .inputs_container{
+        gap: 0;
+        flex-direction: column;
+    }
+    .container{
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+        
+ }

@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   infoAcountTopUp : any
   infoAcountPayment:any
   dataUser!:User
+  
 
   selected: Date = new Date;
 
@@ -21,18 +22,21 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.transations.getTransactions('topup')
-    .subscribe(
+    this.transations.getTransactions('topup').subscribe(
       resp =>{
-        this.infoAcountTopUp = resp
+        
+          this.infoAcountTopUp = resp
+          console.log(this.infoAcountTopUp)
+        
         
       }
     )
     this.transations.getTransactions('payment')
     .subscribe(
       resp =>{
+        if(resp.length!=0){
         this.infoAcountPayment = resp
-        
+        }
       }
     )
 

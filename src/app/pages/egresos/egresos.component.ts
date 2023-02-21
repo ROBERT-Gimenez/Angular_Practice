@@ -9,7 +9,9 @@ import { TransactionsService } from 'src/app/core/services/transactions.service'
 export class EgresosComponent implements OnInit {
 
   data?: Transferencia[];
+  
 
+  addInport:boolean = false
   constructor(private transactionsService: TransactionsService ) {}
 
   ngOnInit(): void {
@@ -23,6 +25,16 @@ export class EgresosComponent implements OnInit {
 
   editConcepto(){
     alert("editar concepto")
+  }
+
+  addData(data:any){
+    this.data?.push(data)
+    console.log(data)
+    this.openAndClose()
+  }
+
+  openAndClose(){
+    this.addInport = !this.addInport
   }
 
   pay(){

@@ -1,46 +1,64 @@
-
-
 <div class="container">
-    
-     
+
+
     <section class="dates">
-        
+
 
         <article class="information">
             <div class="movements">
-             <p class="text">Ultimos movimientos:</p>
-             <div class="cards">
-                
-                <div class="textSaldo" *ngIf="infoAcountPayment">
-                    <div class="title">
-                        <h3>Egreso</h3>
-                    </div> 
-                    <p>Numero de transaccion : {{infoAcountPayment[0]?.id}}</p>
-                    <p>Fecha: {{infoAcountPayment[0]?.createdAt | date: 'short' }}</p>
-                    <p>Cantidad : <span style="color:yellow">-{{infoAcountPayment[0]?.amount | currency}}</span> </p>
-                </div>
+                <p class="text">Ultimos movimientos:</p>
+                <div class="cards">
 
-                <div class="textSaldo" *ngIf="infoAcountTopUp"> 
-                    <div class="title">
-                        <h3>Ingreso</h3>
-                    </div> 
-                    <p>Numero de transaccion: {{infoAcountTopUp[0]?.id}}</p>
-                    <p>Fecha: {{infoAcountTopUp[0]?.createdAt | date: 'short' }}</p>
-                    <p>Cantidad : <span style="color:rgb(0, 255, 68)">{{infoAcountTopUp[0]?.amount | currency }}</span></p>
+                    <div class="textSaldo">
+                        <div class="title">
+                            <h3>Egreso</h3>
+                        </div>
+                        <div *ngIf="infoAcountPayment;then tiene else noTiene"></div>
+
+                        <ng-template #tiene>
+                            <p>Numero de transaccion : {{infoAcountPayment[0]?.id}}</p>
+                            <p>Fecha: {{infoAcountPayment[0]?.createdAt | date: 'short' }}</p>
+                            <p style="color:yellow"> Cantidad :-{{infoAcountPayment[0]?.amount | currency}} </p>
+                        </ng-template>
+                        <ng-template #noTiene>
+                            <p>Aun no hay movimientos</p>
+                        </ng-template>
+
+
+                    </div>
+
+                    <div class="textSaldo">
+                        <div class="title">
+                            <h3>Ingreso</h3>
+                        </div>
+                        <div *ngIf="infoAcountTopUp;then tieneToUp else noTieneToUp"></div>
+
+                        <ng-template #tieneToUp>
+                            <p>Numero de transaccion: {{infoAcountTopUp[0]?.id}}</p>
+                            <p>Fecha: {{infoAcountTopUp[0]?.createdAt | date: 'short' }}</p>
+                            <p style="color:rgb(0, 255, 68)">Cantidad : {{infoAcountTopUp[0]?.amount | currency }}</p>
+                        </ng-template>
+                        <ng-template #noTieneToUp>
+                            <p>Aun no hay movimientos</p>
+                        </ng-template>
+
+                    </div>
+
                 </div>
-                
-             </div>
 
             </div>
         </article>
-        <div class="banner">
-            <img src="banner4.jpg" >
-        </div>
-    </section>
 
+        
+        <div class="banner">
+            <img src="banner4.jpg">
+        </div>
+        
+    </section>
+    
     <section class="acount">
         <div class="header">
-            <div class="containerImg" >
+            <div class="containerImg">
                 <div class="img">
                 </div>
             </div>
@@ -55,7 +73,3 @@
 
     </section>
 </div>
-
-
-
-

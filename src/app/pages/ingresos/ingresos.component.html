@@ -57,14 +57,15 @@
 <div class="containerMuestra" *ngIf="addInport">
   <div class="card">
       <div class="header">
-          <app-title [title]="'Añadir'"></app-title>
+          <app-title [title]="'Nuevo ingreso'"></app-title>
       </div>
 
       <div class="main">
           <app-form (data)="addData($event)"
-                    [type]="'payment'"
+                    [type]="'topup'"
                     (onClose)="openAndClose()"
-                    [view]="addInport"></app-form>
+                    [view]="addInport"
+                    [isEgreso]="false"></app-form>
       </div>
   </div>
 </div>

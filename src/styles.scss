@@ -94,9 +94,9 @@ div.elem2{
 
 @media (max-width:950px) {
     div.fondo{
-      min-height: 115vh;
+      min-height: 160vh;
       height: 100%;
-      max-width: 100vh;
+      /* max-width: 100vh; */
     }
 }
 @media (max-width:550px) {
@@ -106,9 +106,25 @@ div.elem2{
     }
     div.fondo{
       margin-top: 56px;
-      min-height: 115vh;
-      max-width: 100vh;
+      min-height:150vh;
+      /* max-width: 100vh; */
       // height: 130vh;
+    }
+    @keyframes move {
+      0% {
+        transform: translate(-50%, -50%) translateY(150px) rotate(0deg) translate(10px) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) translateY(150px) rotate(360deg) translate(10px) rotate(-360deg);
+      }
+    }
+    @keyframes move2 {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateY(50px) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateY(50px) rotate(-360deg);
+      }
     }
 }
 

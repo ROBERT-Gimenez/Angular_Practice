@@ -26,12 +26,11 @@ describe('RegistroComponent', () => {
       providers: [provideMockStore({}), { provide: ComponentFixtureAutoDetect, useValue: true }, AuthService],
     }).compileComponents();
 
-
   });
 
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['post'])
-    service = new AuthService(httpClientSpy as any,store)
+    service = new AuthService(httpClientSpy as any)
 
     fixture = TestBed.createComponent(RegistroComponent);
     component = fixture.componentInstance;
@@ -81,6 +80,8 @@ describe('RegistroComponent', () => {
       last_name: ['Perez'],
       email: ['test@test.com'],
       password: ['test123'],
+      roleId:[2],
+    points:[0],
       terms: [true]
     })
 
@@ -122,6 +123,8 @@ describe('RegistroComponent', () => {
       last_name: ['Perez'],
       email: ['asd@asd.com'],
       password: ['test123'],
+      roleId:[2],
+    points:[0],
       terms: [true]
     });
 
@@ -150,6 +153,8 @@ describe('RegistroComponent', () => {
       last_name: ['Perez'],
       email: ['juanperez@example.com'],
       password: ['test123'],
+      roleId:[2],
+    points:[0],
       terms: [true]
     });
 

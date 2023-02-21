@@ -48,7 +48,8 @@ import { FormComponent } from './form/form.component';
     FooterComponent,
     AlertsComponent,
     DialogComponent,
-    FormComponent
+    FormComponent,
+    TipoCambioComponent
   ]
 })
 export class SharedModule { }

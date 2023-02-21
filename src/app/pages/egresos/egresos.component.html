@@ -49,6 +49,22 @@
 </ng-container>
 </div>
 <div class="div_btn_added">
-  <button  (click)="pay()" class="btn_added"><mat-icon>payments</mat-icon>Pagar</button> 
+  <button  (click)="openAndClose()" class="btn_added"><mat-icon>payments</mat-icon>Pagar</button> 
 </div>
 </section>
+
+<div class="containerMuestra" *ngIf="addInport">
+  <div class="card">
+      <div class="header">
+          <app-title [title]="'Nuevo Gasto'"></app-title>
+      </div>
+
+      <div class="main">
+          <app-form (data)="addData($event)"
+                    [type]="'payment'"
+                    (onClose)="openAndClose()"
+                    [view]="addInport"
+                    [isEgreso]="true"></app-form>
+      </div>
+  </div>
+</div>

@@ -2,6 +2,10 @@ form {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding-left: 0;
 }
 
 .invalid{
@@ -54,5 +58,11 @@ button:hover {
 
 ::ng-deep .mat-calendar-table-header{
   color: rgb(0, 0, 0);
+}
+
+@media (min-width: 700px) {
+
+
+  
 }
 

@@ -46,8 +46,23 @@ export class LoginComponent implements OnInit {
   setUserData(){
     this.loginService.login(this.loginForm).subscribe({
       next:(res:any) =>{
-        this.router.navigateByUrl('/dashboard/home')
         localStorage.setItem('token',res.accessToken)
+        let id!:number
+        this.loginService.userDates().subscribe((res:any)=>{id = res.id; console.log(id)})
+        this.loginService.getCuenta().subscribe(
+          (res:any)=>{
+            if(res.length == 0){
+              console.log(res)
+              this.loginService.crearCuenta(id).subscribe(res=>{console.log(res)})
+              this.router.navigateByUrl('/dashboard/home')
+            
+                    
+            }else{
+              this.router.navigateByUrl('/dashboard/home')
+            }
+          })
+
+    
        
       },
       error: err =>{console.log(err)

@@ -194,8 +194,9 @@ $shadowBox:-2px 3px 20px 4px #453a74;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: auto;
+    max-width: 600px;
     background-color: white;
     border: 1px solid black;
     border-radius: 30px;
@@ -204,6 +205,7 @@ $shadowBox:-2px 3px 20px 4px #453a74;
 
 .header{
     display: flex;
+    flex-direction: column;
     background-color: #7768b7;
     height: 80px;
     width: 100%;
@@ -216,8 +218,8 @@ $shadowBox:-2px 3px 20px 4px #453a74;
 
 .main{
     height: 100%;
-    width: 100%;
-    background-color: rgb(220, 202, 255);
+    width: auto;
+    background-color: rgb(255, 255, 255);
     border-radius:0 0 31px 31px ;
 }
 

@@ -54,17 +54,16 @@ img:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 8px;
    
-  
-
     .header{
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: center;
         font-weight: bold;
         color: white;
-        margin-top:30px ;
+        /* margin-top: 30px; */
+        gap: 1rem;
 
         h2{
             font-size: 45px;
@@ -85,11 +84,12 @@ img:hover{
     }
 
 }
-
 .containerImg{
     margin-top: 20px;
-    height: 150px;
-    width: 150px;
+   /*  height: 150px;
+    width: 150px; */
+    height: 91px;
+    width: 96px;
     border-radius: 100%;
     display: flex;
     align-items:center;
@@ -97,14 +97,16 @@ img:hover{
     box-shadow: -1px 5px 20px 7px black;
     background-color: #574A8D;
     .img{
-        height: 135px;
-        width: 135px;
+       /*  height: 135px;
+        width: 135px; */
+        height: 91px;
+        width: 91px;
         background-image: url('../../assets/img/profile-pictur-meme.png');
         background-position: center;
         background-size: contain;
+    
     }
 }
-
 .information{
     text-align: center;
     display: flex;
@@ -120,23 +122,19 @@ img:hover{
     }
 
 }
-
 .movements{
     display: flex;
     width: 50%;
     flex-direction: column;
     align-items: center;
 }
-
-
 .textSaldo{
     margin-top: 20px;
     font-weight: bold;
     background-color: $violetMian;
     color: white;
     width: 220px;
-    max-width: 250px;
-    
+    max-width: 250px;    
     height: 200px;
     border-radius: 20px;
     display: flex;
@@ -150,15 +148,12 @@ img:hover{
         margin: 0;
         font-size: 20px;
         font-weight: bold;
-        
     }
     p{
         padding-left: 10px;
         text-align: left;
     }
 }
-
-
 .cards{
     display: flex;
     gap: 50px;
@@ -174,13 +169,15 @@ img:hover{
         img{
             width: 300px;
             height: 200px;
+            height: fit-content;
         }
     }
     .information,.cards{
         background-color: none;
         flex-direction: column;
-
-        
+        display: grid;
+        grid-template-columns: 160px 160px;
+        place-items: center;
     }
 
     .cards{
@@ -190,35 +187,31 @@ img:hover{
     .container{
         flex-direction: column-reverse;
     }
-
     .acount{
         width: auto;
         justify-content: flex-start;
         height: auto;
     }
-
     .dates{
         height: 600px;
     }
-
     .cards{
         flex-direction: row;
     }
-
-
 }
 
 @media (max-width:500px){
     .cards{
         // grid-template-columns: none;
-        grid-template-rows: 200px;
-        gap: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
     }
-
     .textSaldo{
-        width: 200px;
+        width: 244px;
+        gap: 1px;
+        height: fit-content;
     }
-
     img{
         width: 100%;
     }
@@ -226,7 +219,6 @@ img:hover{
 
 
 @media (max-width:900px){
-
 
     .container{
         gap: 20px;
@@ -244,7 +236,6 @@ img:hover{
         min-height: 0;
     }
 
-
     .information{
         display: flex;
         gap: 20px;
@@ -261,8 +252,8 @@ img:hover{
     img{
         width: 50%;
         height: 200px;
+        height: fit-content;
     }
-
 
     .information{
         text-align: center;
@@ -274,7 +265,6 @@ img:hover{
         flex-direction: column;
         justify-content: space-between;
     }
-
 }
 
 
@@ -283,7 +273,6 @@ img:hover{
         display: flex;
         height: 300px;
     }
-
     .dates{
         gap: 20px;
     }
@@ -292,13 +281,12 @@ img:hover{
         height: 200px;
     }
 
-    
 }
 
 @media (min-width:1024px){
-    img{
-        height: 250px;
-    } 
+   /*  img{
+         height: 250px; 
+    }  */
 }
 
 @media (min-height:1000px) and ( min-width:900px){
@@ -338,4 +326,13 @@ img:hover{
     text-align: center;
 }
 
-
+@media (max-width:340px){
+    .banner{
+        width: 80%;
+        display: contents;
+    }
+    .banner img{
+        width: 246px;
+    }
+    
+}

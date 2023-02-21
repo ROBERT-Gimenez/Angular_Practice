@@ -22,4 +22,8 @@ export class TransactionsService {
       );
   }
 
+  postTransactions(transaction: any){
+    return this.httpService.post(`${environment.URL_BASE}/transactions`,transaction)
+  }
+
 }

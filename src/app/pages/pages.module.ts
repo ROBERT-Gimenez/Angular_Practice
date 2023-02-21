@@ -9,7 +9,6 @@ import { IngresosComponent } from './ingresos/ingresos.component';
 import { EgresosComponent } from './egresos/egresos.component';
 import { formResetComponent } from '../components/form-reset/form-reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CashflowComponent } from '../components/cashflow/cashflow.component';
 import { WalletComponent } from './wallet/wallet.component';
 // import { HomeComponent } from './home/home.component';
 
@@ -22,7 +21,6 @@ import { WalletComponent } from './wallet/wallet.component';
     IngresosComponent,
     EgresosComponent,
     formResetComponent,
-    CashflowComponent,
     WalletComponent
     // HomeComponent
   ],
@@ -31,7 +29,7 @@ import { WalletComponent } from './wallet/wallet.component';
     PagesRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    HomeModule
+    HomeModule,
   ],
   exports:[
     PagesRoutingModule

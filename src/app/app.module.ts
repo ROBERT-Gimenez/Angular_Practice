@@ -18,6 +18,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/services/auth/auth.interceptor';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     SharedModule,
     HttpClientModule,
     AuthModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({})
   ],

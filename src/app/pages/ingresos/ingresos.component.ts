@@ -19,9 +19,7 @@ export class IngresosComponent implements OnInit {
     this.transactionsService.getTransactions("topup").subscribe((data:any) => {
       this.data = data;
       console.log(this.data);
-    }, (error:any) => {
-      console.error(error);
-    });
+    })
   }
 
   openAndClose(){
