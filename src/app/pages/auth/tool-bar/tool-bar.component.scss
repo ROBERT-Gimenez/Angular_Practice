@@ -1,0 +1,34 @@
+
+mat-toolbar{
+    background-color: #1f1f34d2;
+    padding: 0;
+
+    .space{
+        width: 90%;
+    }
+}
+
+.buttonContainer{
+   
+
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        width: 110px;
+        height: 50px;
+        text-align: center;
+        margin-left: 10px;
+
+        span{
+            width: 100%;
+        }
+    }
+}
+
+.title{
+    margin-left: 20px;
+    color: white;
+    font-size: 2rem;
+}

@@ -1,0 +1,11 @@
+<p>
+    <mat-toolbar >
+        <span class="title">AlkyBank</span>
+        <span class="space"></span>
+        <div class="buttonContainer" *ngFor="let button of buttons">
+            <button mat-raised-button
+                    color="primary"
+                    [routerLink]="button.url">{{button.title}}</button>
+        </div>
+    </mat-toolbar>
+  </p>

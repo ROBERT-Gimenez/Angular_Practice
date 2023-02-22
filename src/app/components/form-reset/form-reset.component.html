@@ -15,17 +15,23 @@
           </mat-error>
         </mat-form-field>
 
+<div>
+        <mat-icon class="icon_eye" (click)="togglePasswordVisibility()" >
+          {{passwordVisibility ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
         <mat-form-field appearance="fill">
           <mat-label for="password">Contraseña</mat-label>
           <input matInput formControlName="password"
             [type]="passwordVisibility ? 'text' : 'password'"
-            placeholder="Enter password"
-          >
+            placeholder="Enter password">
+          
           <mat-error *ngIf="validateForm.controls['password'].touched
           && validateForm.controls['password'].errors">
             {{ getErrorMessage('password') }}
           </mat-error>
         </mat-form-field>
+      </div>
+
         <mat-form-field appearance="fill">
           <mat-label for="password2">Confirme su Contraseña</mat-label>
           <input matInput formControlName="password2"
@@ -47,7 +53,5 @@
         </div>
         
       </form>
-      <mat-icon class="icon_eye" (click)="togglePasswordVisibility()" >
-        {{passwordVisibility ? 'visibility_off' : 'visibility'}}
-      </mat-icon>
+     
   </div>

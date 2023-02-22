@@ -1,0 +1,102 @@
+div.container_imgs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    place-content: center;
+    height: 50%;
+    place-items: end;
+    position: relative;
+    top: 7rem;
+
+}
+div.img_img{
+    width: 6rem;
+    border-radius: 50%;
+   transition: 0.5s ease-in-out;
+   flex-basis: calc(50% - 135px);
+  /*  margin-bottom: 10px; */
+  
+}
+img.img_perfil{
+    border-radius: 50%;
+    width: 50%;
+    box-shadow: 2px 2px 10px beige;
+}
+
+div.img_img:hover{
+    transform: rotate(-4deg);
+    scale: 1.1;
+}
+.user-info {
+    z-index: 2;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    box-shadow: 0 0 2rem rgb(88 2 138 / 52%);
+    height: 19rem;
+    padding: 20px;
+    background-color: #FAFAFB;
+    border-radius: 20px;
+    justify-content: space-evenly;
+  }
+  .social_content{
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+  .social{
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    border-right: groove;
+    border-bottom-style: groove;
+  }
+  .social:hover{
+   /*  border-right: none; */
+    border-bottom-style: none;
+    border-left: groove;
+    border-top-style: groove;
+  }
+  #linkedin{
+    background-color: lightblue;
+    border-radius: 2px;
+  }
+@media (max-width:1140px){
+    div.img_img{
+        flex-basis: calc(50% - 61px);
+    }
+}
+@media (max-width:950px){
+    div.img_img{
+        flex-basis: calc(60% - 61px);
+    }
+}
+@media (max-width:800px){
+    div.img_img{
+        flex-basis: calc(80% - 120px);
+    }
+}
+@media (max-width:800px){
+    div.container_imgs{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 15px;
+        place-content: center;
+        height: 80%;
+        place-items: end;
+        position: absolute;
+        top: 7rem;
+        background-color: #202124;
+        border-radius: 20px;
+        margin: 0 auto;
+        z-index: 1;
+        display: inline-grid;
+        left: 0;
+        box-shadow: 2px 2px 10px #673ab7;
+    }
+}
+

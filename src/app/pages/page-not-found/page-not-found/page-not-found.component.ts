@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class PageNotFoundComponent implements OnInit {
 
   goHome() {
-    location.replace('dashboard/home');
+    if(localStorage.getItem('token')){
+      location.replace('dashboard/home');
+    }else{
+      location.replace('login');
+    }
 }
   constructor() { }
 

@@ -1,3 +1,5 @@
+$gradiant:linear-gradient(90deg,#1f1f34d2,#2c173cb9,#1f1f34b7);
+
 .contenedor {
     display: flex;
     justify-content: center;
@@ -23,7 +25,7 @@
 
 .loginForm {
     box-shadow: 0 0 2rem rgba(88, 2, 138, 0.518);
-    width: 30rem;
+    // width: 30rem;
     height: 25rem;
     padding: 35px;
     background-color: #FAFAFB;
@@ -86,5 +88,26 @@ form {
 
 
 .invalidDates{
-    color: red;
+    color: #ff0000;
+}
+
+@media (max-width:750px) {
+    .contenedor{
+        margin-top: 90px;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+        height: auto;
+    }
+    
+}
+
+
+article{
+    width: 50%;
+    height: 100%;
+    background-image: url('Wallet-pana2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

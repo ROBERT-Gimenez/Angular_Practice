@@ -17,7 +17,7 @@
 
 .registerForm {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.717);
-    width: 30rem;
+    width: 400px;
     height: 32rem;
     padding: 35px;
     background-color: #fafafb;
@@ -91,4 +91,24 @@ input:focus{
 
 .tengoCuenta{
     margin-top: 10px;
+}
+
+article{
+    width: 50%;
+    height: 100%;
+    background-image: url('Wallet-pana2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (max-width:750px) {
+    .contenedor{
+        margin-top: 90px;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+        height: auto;
+    }
+    
 }

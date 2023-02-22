@@ -119,4 +119,10 @@ export class WalletComponent implements OnInit {
 
   }
 
+  clean(){
+    this.numberOperations = ""
+
+    localStorage.removeItem('Operation')
+  }
+
 }

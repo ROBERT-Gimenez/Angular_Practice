@@ -7,6 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TermsAndConditionsComponent } from 'src/app/components/terms-and-conditions/terms-and-conditions.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { CommentsComponent } from './comments/comments.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { RouterModule } from '@angular/router';
+import { ToolBarComponent } from './tool-bar/tool-bar.component';
 
 
 
@@ -15,13 +20,18 @@ import { TermsAndConditionsComponent } from 'src/app/components/terms-and-condit
   declarations: [
     LoginComponent,
     RegistroComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    AboutUsComponent,
+    CommentsComponent,
+    QuestionsComponent,
+    ToolBarComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ]
 })
 export class AuthModule { }

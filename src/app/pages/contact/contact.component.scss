@@ -200,7 +200,7 @@ hr{
 
 .main{
     width: 100%;
-    background-color: rgb(220, 202, 255);
+    background-color: white;
     height: 100%;
     border-radius: 10px;
     justify-content: center;
@@ -226,6 +226,7 @@ hr{
     font-size: x-large;
     font-weight: bold;
     color: #ffffff;
+    padding: 10px 1px
 }
 .main form {
     width: 100%;
@@ -250,10 +251,12 @@ hr{
 
 }
 .btn_submit{
-background-color: lightgreen;
+background-color: rgb(56, 185, 90);
+color: rgb(254, 254, 254) !important;
 }
 .close_modal{
-background-color: #F889AA;
+background-color: #ea1f1f;
+color: white;
 }
 .enviar_plata{
     border-radius: 10px;

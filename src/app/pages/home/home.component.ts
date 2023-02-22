@@ -24,8 +24,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.transations.getTransactions('topup').subscribe(
       resp =>{
-        
+        if(resp.length!=0){
           this.infoAcountTopUp = resp
+        }
           console.log(this.infoAcountTopUp)
         
         
