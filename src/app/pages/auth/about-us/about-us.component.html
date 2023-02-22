@@ -1,4 +1,4 @@
-<div class="container_imgs">
+<div class="container_about">
 <div class="container_imgs">
   <div class="img_img" *ngFor="let user of users">
     <img class="img_perfil" src="{{ user.photoUrl }}" alt="img" (click)="showUserInfo(user)">
@@ -6,13 +6,14 @@
 </div>
 
 <div class="user-info" *ngIf="selectedUser">
-  <h3>{{ selectedUser.name }}</h3>
-  <p>{{ selectedUser.info }}</p>
+  <h3 class="title_user">{{ selectedUser.name }}</h3>
+  <p class="descr">{{ selectedUser.info }}</p>
   <div class="social_content">
-    <span class="social">Linked<i id="linkedin" class="bx bxl-linkedin"></i></span>
-    <span class="social"><i id="git" class="bx bxl-github"></i> GitHub </span>
+    <a href="{{ selectedUser.linkedin }}"  class="social">Linked <i id="linkedin" class="bx bxl-linkedin"></i></a>
+    <a href="{{selectedUser.github}}" class="social"><i id="git" class="bx bxl-github"></i> GitHub </a>
   </div>
-  <button  (click)="hideUserInfo()" class="btn_added">Return <mat-icon>keyboard_return</mat-icon></button> 
+<!--   <button  (click)="hideUserInfo()" class="btn_return">Return <mat-icon>keyboard_return</mat-icon></button> 
+ -->  <button  (click)="hideUserInfo()" class="btn_return">Return <mat-icon>arrow_circle_left</mat-icon></button> 
  
 </div>
 </div>
