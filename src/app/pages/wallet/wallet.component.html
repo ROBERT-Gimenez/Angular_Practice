@@ -2,7 +2,6 @@
 
     <div class="saldo" *ngIf="canSee">
         <h3> {{money | currency}}  </h3> <mat-icon (click)="changeView()">visibility</mat-icon>
-       
     </div>
 
     <div class="saldo" *ngIf="!canSee">
@@ -11,7 +10,7 @@
     
     <div class="buttons">
         <button (click)="openForm('ingresar')">Ingresar Dinero</button>
-        <button [disabled]="true" style="cursor:no-drop;">Transferir dinero</button>
+        <button (click)="openAndClose()">Transferir dinero</button>
         <button (click)="openForm('extraer')">Sacar efectivo</button>
     </div>
 
@@ -44,6 +43,7 @@
 
         </div>
     </div>
+   
 
     <div class="eventForm" *ngIf="canViewForm">
         <div class="header">
@@ -73,6 +73,20 @@
             </div>
         </div>
     </div>
+
+    <div class="containerMuestra" *ngIf="addInport">
+        <div class="card">
+            <div class="mains">
+                <app-form (data)="addData($event)"
+                          [type]="'payment'"
+                          (onClose)="openAndClose()"
+                          [view]="addInport"
+                          [isTransf]="true"
+                          [isEgreso]="true"></app-form>
+            </div>
+        </div>
+      </div>
+
 </div>
 
 

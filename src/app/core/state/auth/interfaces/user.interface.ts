@@ -4,5 +4,11 @@ export interface User {
     email: string,
     password: string,
     roleId?: number,
-    points?: number
+    points?: number,
+    contacts?: Contact[] | undefined,
 }
+ 
+export interface Contact {
+    name: string,
+    userId: number
+  }

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-$gradiant:linear-gradient(90deg,#5f46c3,#9f89f8,#6d39d4,);
-
+// $gradiant:linear-gradient(90deg,#5f46c3,#9f89f8,#6d39d4,);
+$gradiant:linear-gradient(90deg,#220138,#000000,#220040);
+// $gradiant:linear-gradient(264deg,#1f1f34,#120782,#1f1f34);
+// $gradiant:linear-gradient(264deg,#1f1f34d2,#2c173cb9,#1f1f34b7);
 
 
 html, body { height: 100%; }
@@ -10,6 +12,16 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body{background:transparent;}
+
+body::-webkit-scrollbar{
+  width: 7px;
+  background-color: rgb(20, 9, 44);
+}
+
+body::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: #2e015bd6;
+}
 
 div.fondo{
     width: 100%;
@@ -40,7 +52,8 @@ div.cortina{
     margin: 0 auto;
     display: flex;
     z-index: -2;
-    background-color: #202124;
+    // background-color: #240c31;
+    background-image: $gradiant;
     top: 0;
     
 }

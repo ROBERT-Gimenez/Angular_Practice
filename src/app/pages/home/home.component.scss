@@ -130,9 +130,8 @@ img:hover{
     align-items: center;
 }
 .textSaldo{
-    margin-top: 20px;
-    font-weight: bold;
-    background-color: $violetMian;
+ 
+    background-color: #1f1942a4;
     color: white;
     width: 220px;
     max-width: 250px;    
@@ -142,13 +141,18 @@ img:hover{
     flex-direction: column;
     gap: 10px;
     justify-content: flex-start;
-    box-shadow:  $shadowBox;
+    // box-shadow:  $shadowBox;
     text-align: center;
 
     h3{
+        
         margin: 0;
         font-size: 20px;
-        font-weight: bold;
+        // font-weight: bold;
+        background-color: black;
+        padding: 10px;
+        background-color: #342588;
+        border-radius: 20px 20px 0 0;
     }
     p{
         padding-left: 10px;
@@ -320,15 +324,15 @@ img:hover{
     
 }
 
-.title{
-    background-color: #342588;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px 20px 0 0;
-    height: 50px;
-    text-align: center;
-}
+// .title{
+//     background-color: #342588;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-radius: 20px 20px 0 0;
+//     height: 50px;
+//     text-align: center;
+// }
 
 @media (max-width:340px){
     .banner{
@@ -340,3 +344,4 @@ img:hover{
     }
     
 }
+

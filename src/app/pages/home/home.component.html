@@ -11,12 +11,12 @@
 
                     <div class="textSaldo">
                         <div class="title">
-                            <h3>Egreso</h3>
+                            <h3>EGRESO</h3>
                         </div>
                         <div *ngIf="infoAcountPayment;then tiene else noTiene"></div>
 
                         <ng-template #tiene>
-                            <p>Numero de transaccion : {{infoAcountPayment[0]?.id}}</p>
+                            <p>Número de transacción : {{infoAcountPayment[0]?.id}}</p>
                             <p>Fecha: {{infoAcountPayment[0]?.createdAt | date: 'short' }}</p>
                             <p style="color:yellow"> Cantidad :-{{infoAcountPayment[0]?.amount | currency}} </p>
                         </ng-template>
@@ -29,12 +29,12 @@
 
                     <div class="textSaldo">
                         <div class="title">
-                            <h3>Ingreso</h3>
+                            <h3>INGRESO</h3>
                         </div>
                         <div *ngIf="infoAcountTopUp;then tieneToUp else noTieneToUp"></div>
 
                         <ng-template #tieneToUp>
-                            <p>Numero de transaccion: {{infoAcountTopUp[0]?.id}}</p>
+                            <p>Número de transacción: {{infoAcountTopUp[0]?.id}}</p>
                             <p>Fecha: {{infoAcountTopUp[0]?.createdAt | date: 'short' }}</p>
                             <p style="color:rgb(0, 255, 68)">Cantidad : {{infoAcountTopUp[0]?.amount | currency }}</p>
                         </ng-template>
@@ -70,6 +70,8 @@
             <p class="saldo" *ngIf="dataUser"> {{dataUser.points}}</p>
 
         </div>
+
+        <app-tipo-cambio></app-tipo-cambio>
 
     </section>
 </div>

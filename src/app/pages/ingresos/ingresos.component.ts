@@ -26,10 +26,6 @@ export class IngresosComponent implements OnInit {
     this.addInport = !this.addInport
   }
 
-  editConcepto(){
-    alert("editar concepto")
-  }
-
   addData(data:any){
     this.data?.push(data)
     console.log(data)

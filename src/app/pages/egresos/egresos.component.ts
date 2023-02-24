@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Transferencia } from 'src/app/core/interfaces/transferencia.interface';
 import { TransactionsService } from 'src/app/core/services/transactions.service';
+import { Observable } from 'rxjs';
+import { Title } from 'src/app/shared/title/interfaces/title.interface';
 @Component({
   selector: 'app-egresos',
   templateUrl: './egresos.component.html',
@@ -9,6 +11,11 @@ import { TransactionsService } from 'src/app/core/services/transactions.service'
 export class EgresosComponent implements OnInit {
 
   data?: Transferencia[];
+
+
+  title : any= {
+    name:'Gastos'
+  }
   
 
   addInport:boolean = false

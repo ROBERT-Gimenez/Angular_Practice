@@ -20,6 +20,8 @@ export class FormComponent implements OnInit {
   @Input()
   isEdition: boolean = false;
 
+  @Input() isTransf: boolean=false
+
   @Input() isEgreso: boolean = false;
   @Input()
   // formValues?: FormGroup;
@@ -32,6 +34,8 @@ export class FormComponent implements OnInit {
   @Output() data: EventEmitter<Transferencia> = new EventEmitter()
 
   @Output() onClose: EventEmitter<boolean> = new EventEmitter()
+
+  
 
   accId!: number;
   usId!: number;
@@ -68,8 +72,13 @@ export class FormComponent implements OnInit {
         
     this.createBody()
 
-      if (this.isEgreso) {
+      if (this.isEgreso ||this.isTransf) {
         this.httpService.post<Transferencia>(`${baseUrl}/transactions`, this.body, false).subscribe(resp => this.data.emit(resp)) 
+        this.httpService.post<any>(`${baseUrl}/accounts/${this.form.get('idUsuario')?.value}`, {
+            "type": "payment",
+            "concept": this.form.get('concepto')?.value,
+            "amount": this.form.get('monto')?.value
+        }, false).subscribe(resp => this.data.emit(resp)) 
       }else{
         this.httpService.post<Transferencia>(`${baseUrl}/transactions`, this.body, false).subscribe(resp => this.data.emit(resp))
         this.httpService.post<any>(`${baseUrl}/fixeddeposits`, {

@@ -1,70 +1,64 @@
 <section class="container">
-  <app-title [title]="'Egresos'"></app-title>
+  <app-title [title]="'gastos'"></app-title>
   <hr>
   <br>
   <div class="accordion">
 
-  <ng-container *ngFor="let item of data">
+    <ng-container *ngFor="let item of data">
 
-  <article class="accordion-panel">
-      <input class="input_movement" type="radio" id="{{item.id}}"
-      name="accordion"  />
-      <label  for="{{item.id}}">
-      <div class="amountContainer">
-        {{ item.updatedAt  | date: 'short' }} <br> 
-        <p class="negative">
-          -{{item.amount | currency }}
-        </p>
-       </div>
+      <article class="accordion-panel">
+        <input class="input_movement" type="radio" id="{{item.id}}" name="accordion" />
+        <label for="{{item.id}}">
+          <div class="amountContainer">
+            {{ item.updatedAt | date: 'short' }} <br>
+            <p class="negative">
+              -{{item.amount | currency }}
+            </p>
+          </div>
 
-      <mat-icon class="open">expand_more</mat-icon>
-        
+          <mat-icon class="open">expand_more</mat-icon>
+
           <div id="cerrar_art" class="accordion-cerrar">
-            <input type="radio" id="cerrar"
-            name="accordion" 
-            />
+            <input type="radio" id="cerrar" name="accordion" />
             <label for="cerrar" class="label_cerrar">
-            <mat-icon class="close">expand_less</mat-icon>
+              <mat-icon class="close">expand_less</mat-icon>
             </label>
           </div>
 
-      </label>
-  
-      <div class="accordion-body">
-        <span class="accordion-answer">N°Transf : {{ item.id }}</span><br>
-        <span class="accordion-answer">Monto: {{item.amount | currency }}</span><br>
-        <span class="accordion-answer">Fecha/h : {{ item.updatedAt  | date: 'short' }}</span><br>
-        <span class="accordion-answer">Enviado a N° de Cuenta: {{ item.to_account_id}}</span><br>
-        <span class="accordion-answer">Concepto : {{ item.concept }}</span><br>
-        <span class="accordion-answer">Transaccion : {{ item.type }} (pago)</span><br>
-        <div class="btn_container">
-          <br>
-          <!-- <button class="btn_edit" (click)="editConcepto()"><mat-icon>edit</mat-icon>Editar</button>  -->
+        </label>
+
+        <div class="accordion-body">
+          <span class="accordion-answer">N°Transf : {{ item.id }}</span><br>
+          <span class="accordion-answer">Monto: {{item.amount | currency }}</span><br>
+          <span class="accordion-answer">Fecha/h : {{ item.updatedAt | date: 'short' }}</span><br>
+          <span class="accordion-answer">Enviado a N° de Cuenta: {{ item.to_account_id}}</span><br>
+          <span class="accordion-answer">Concepto : {{ item.concept }}</span><br>
+          <span class="accordion-answer">Transaccion : {{ item.type }} (pago)</span><br>
+          <div class="btn_container">
+            <br>
+            <!-- <button class="btn_edit" (click)="editConcepto()"><mat-icon>edit</mat-icon>Editar</button>  -->
+          </div>
         </div>
-      </div>
-    
 
-  </article>
 
-</ng-container>
-</div>
-<div class="div_btn_added">
-  <button  (click)="openAndClose()" class="btn_added"><mat-icon>payments</mat-icon>Pagar</button> 
-</div>
+      </article>
+
+    </ng-container>
+  </div>
+  <!-- <div class="div_btn_added">
+    <button (click)="openAndClose()" class="btn_added"><mat-icon>payments</mat-icon>Pagar</button>
+  </div> -->
 </section>
-
+<!-- 
 <div class="containerMuestra" *ngIf="addInport">
   <div class="card">
-      <div class="header">
-          <app-title [title]="'Nuevo Gasto'"></app-title>
-      </div>
+    <div class="header">
+      <app-title [title]="'Nuevo Gasto'"></app-title>
+    </div>
 
-      <div class="main">
-          <app-form (data)="addData($event)"
-                    [type]="'payment'"
-                    (onClose)="openAndClose()"
-                    [view]="addInport"
-                    [isEgreso]="true"></app-form>
-      </div>
+    <div class="main">
+      <app-form (data)="addData($event)" [type]="'payment'" (onClose)="openAndClose()" [view]="addInport"
+        [isEgreso]="true"></app-form>
+    </div>
   </div>
-</div>
+</div> -->

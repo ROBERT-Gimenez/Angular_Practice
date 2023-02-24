@@ -7,16 +7,19 @@
     <ng-container *ngFor="let item of data">
   
     <article class="accordion-panel" >
-        <input class="input_movement" type="radio" id="{{item?.id}}"
+        <input class="input_movement" type="radio" id="{{item?.userId}}"
         name="accordion"  />
-        <label  for="{{item?.id}}">
+        <label  for="{{item?.userId}}">
        <div class="amountContainer">
-        {{ item?.first_name}} <br> 
+        {{ item?.name}} <br> 
         <p >
-          ID:{{item?.id }}
+          ID:{{item?.userId }}
         </p>
        </div>
-       <button class="enviar_plata" (click)="envio()"><mat-icon>payments</mat-icon>Enviar </button>
+       <div class="btns_action">    
+         <button class="eliminar_contacto" (click)="deleteContact(item.userId)"><mat-icon>delete</mat-icon>Eliminar </button>
+         <button class="enviar_plata" (click)="envio()"><mat-icon>payments</mat-icon>Enviar </button>
+        </div>
         </label> 
     </article>
   
@@ -43,17 +46,18 @@
                     </mat-form-field>
                     
                     <mat-form-field appearance="fill">
-                        <mat-label for="Apellido">Apellido de Usuario</mat-label>
-                        <input matInput formControlName="Apellido" required
-                        type="text"  name="Apellido" 
-                        placeholder="Apellido">
+                        <mat-label for="userId">Id de Usuario</mat-label>
+                        <input matInput formControlName="userId" required
+                        type="number"  name="userId" 
+                        placeholder="userId">
                     </mat-form-field>
                     
                 </div>
                   <div class="btns" mat-dialog-actions>
-                    <button mat-button class="close_modal" (click)="openAndClose()" >Cancelar</button>
                     <button mat-button class="btn_submit" 
                     type="submit" (click)="addContact()" [disabled]="!form.valid">Aceptar</button>
+                    <button mat-button class="close_modal" (click)="openAndClose()" >Cancelar</button>
+                   
                   </div>
                   
                 </form>

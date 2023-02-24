@@ -32,3 +32,19 @@ mat-toolbar{
     color: white;
     font-size: 2rem;
 }
+
+@media (max-width:500px) {
+
+    .title{
+        display: none;
+    }
+
+    .space{
+        display: none;
+    }
+
+    .buttonContainer{
+        margin:auto
+    }
+    
+}

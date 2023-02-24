@@ -204,3 +204,21 @@
     }
 }
 
+.card{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+    width: auto;
+    max-width: 600px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+   
+}
