@@ -1,1 +1,13 @@
-<p>comments works!</p>
+
+<div class="container">
+
+    <div *ngFor="let persona of personas">
+        <div class="card">
+            <div class="header">
+                <img class="perfilPic" src="{{persona.pic}}" alt="perfil">
+                <p class="title">{{persona.nombre}}</p>
+            </div>
+            <p class="comment">{{persona.comentario}}</p>
+        </div>
+    </div>
+</div>

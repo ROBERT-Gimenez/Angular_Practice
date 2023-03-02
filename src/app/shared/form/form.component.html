@@ -25,13 +25,14 @@
   <div *ngIf="isEgreso; then egreso"></div>
   <ng-template #egreso>
     <mat-form-field appearance="outline"> 
-      <mat-label>¿A qué cuenta le querés enviar dinero?</mat-label>
-      <input matInput formControlName="idUsuario" type="number" placeholder="Ingresá CVU/CBU o alias">
+      <mat-label>{{ contactId ? 'Ingrese N° de la cuenta del contacto:' : '¿A qué cuenta le querés enviar dinero?' }}</mat-label>
+      <input matInput formControlName="userId" type="number"  *ngIf="contactId">
+      <input matInput formControlName="userId" type="number" placeholder="Ingrese el ID de usuario" *ngIf="!contactId">
     </mat-form-field>
   </ng-template>
 
   <div class="buttons">
-    <button mat-flat-button color="primary" (click)="submit()">Anadir</button>
+    <button mat-flat-button color="primary" (click)="submit()">Aceptar</button>
     <button mat-flat-button color="warn" (click)="close()">Cerrar</button>
   </div>
 

@@ -34,6 +34,7 @@ export class SideBarComponent implements OnInit {
   logout(){
     this.authService.logout();
     this.store.dispatch(logout());
+    localStorage.clear()
   }
 
   titleSend(title: string){

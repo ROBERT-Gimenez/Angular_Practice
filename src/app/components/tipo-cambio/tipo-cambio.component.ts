@@ -11,6 +11,7 @@ export class TipoCambioComponent implements OnInit {
   compra !:number
   venta!:number
   tipo!:string
+  data!: any;
   constructor(private http: HttpService) { 
 
   }
@@ -30,7 +31,7 @@ export class TipoCambioComponent implements OnInit {
     .then((data) => {
       data.json()
       .then(res =>{ 
-
+        this.data = res
         this.compra = res[1].casa.compra
 
         this.venta =res[1].casa.venta

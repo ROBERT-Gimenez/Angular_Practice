@@ -1,0 +1,19 @@
+<article class="container">
+    <form [formGroup]="form" (submit)="calcular()">
+        <div class="box" >
+            <h1 class="title">Plazos Fijos</h1>
+                <mat-form-field class="input" >
+                    <mat-label>Ingrese la cantidad de dinero a Invertir</mat-label>
+                    <input matInput type="number" placeholder="Inversion" formControlName="money"/>
+                </mat-form-field>
+                <mat-form-field class="input">
+                    <mat-label>Ingrese la cantidad de dias a invertir</mat-label>
+                    <input matInput type="number" placeholder="dias a invertir" formControlName="day"/>
+                </mat-form-field>
+            
+            <button mat-button class="boton" type="submit" (submit)="calcular()">Calcular</button>
+            
+            <p *ngIf="show" class="res">{{resultado| currency: "US":"+$":'1.2-2' }}</p>
+        </div>
+    </form>
+</article>

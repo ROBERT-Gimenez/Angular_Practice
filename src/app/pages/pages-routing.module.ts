@@ -7,6 +7,7 @@ import { IngresosComponent } from './ingresos/ingresos.component';
 import { EgresosComponent } from './egresos/egresos.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { ContactComponent } from './contact/contact.component';
+import { PlazoFijoComponent } from './plazo-fijo/plazo-fijo.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,10 @@ const routes: Routes = [
   {
     path:'contact',
     component: ContactComponent
-  },
+  },{
+    path:"plazos-fijos",
+    component: PlazoFijoComponent
+  }
   
 ];
 

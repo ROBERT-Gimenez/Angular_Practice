@@ -27,8 +27,7 @@ export class HomeComponent implements OnInit {
         if(resp.length!=0){
           this.infoAcountTopUp = resp
         }
-          console.log(this.infoAcountTopUp)
-        
+         
         
       }
     )

@@ -18,7 +18,6 @@ export class IngresosComponent implements OnInit {
   ngOnInit(): void {
     this.transactionsService.getTransactions("topup").subscribe((data:any) => {
       this.data = data;
-      console.log(this.data);
     })
   }
 
@@ -28,7 +27,6 @@ export class IngresosComponent implements OnInit {
 
   addData(data:any){
     this.data?.push(data)
-    console.log(data)
     this.openAndClose()
   }
 

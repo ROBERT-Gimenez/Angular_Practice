@@ -4,7 +4,7 @@
     <br>
     <div class="accordion">
   
-    <ng-container *ngFor="let item of data">
+    <ng-container *ngFor="let item of lista">
   
     <article class="accordion-panel" >
         <input class="input_movement" type="radio" id="{{item?.userId}}"
@@ -18,7 +18,7 @@
        </div>
        <div class="btns_action">    
          <button class="eliminar_contacto" (click)="deleteContact(item.userId)"><mat-icon>delete</mat-icon>Eliminar </button>
-         <button class="enviar_plata" (click)="envio()"><mat-icon>payments</mat-icon>Enviar </button>
+         <button class="enviar_plata" (click)="openForm(item?.userId)"><mat-icon>payments</mat-icon>Enviar </button>
         </div>
         </label> 
     </article>
@@ -64,4 +64,20 @@
         </div>
     </div>
   </div>
-  
+  <div class="containerMuestra" *ngIf="addInport2">
+    <div class="card2">
+        <div class="main">
+          <app-form 
+          (data)="finalized()"
+          [contactId]="contactId"
+          [type]="'payment'" 
+          (onClose)="openAndClose2()" 
+          [view]="addInport2"
+          [isEgreso]="true"
+          [isTransf]="true"
+          >
+        </app-form>
+      </div>
+    </div>
+  </div>
+    

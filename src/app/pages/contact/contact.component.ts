@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators , FormGroup} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Alert } from 'src/app/core/interfaces/alerts.interface';
+import { Transferencia } from 'src/app/core/interfaces/transferencia.interface';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { HttpService } from 'src/app/core/services/http.service';
 import { Contact, User, } from 'src/app/core/state/auth/interfaces/user.interface';
@@ -15,12 +16,13 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
-  data: Contact[] = [];
-  addInport = false;
+  data?: Transferencia[];
+  lista: Contact[] = [];
+  addInport:boolean = false;
+  addInport2:boolean = false;
   form!: FormGroup;
   dataUser!:User
-
+  contactId?:number;
   alert : Alert = {
     err:'Error',
     msg:'',
@@ -36,15 +38,16 @@ export class ContactComponent implements OnInit {
 
     ngOnInit(): void {
         //data obtiene los contactos del local
-      this.data = this.LocalContact(this.dataUser)
+      this.lista = this.LocalContact(this.dataUser)
       this.form = this.fb.group({
         Nombre: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z ]*$')]],
         userId: ['', [Validators.required, Validators.minLength(3)]]
       });
       this.authService.userDates().subscribe((res:any)=>{
         this.dataUser = res.id
-        this.data = this.LocalContact(this.dataUser)
+        this.lista = this.LocalContact(this.dataUser)
       })
+      
     }
     
     openDialog( alert?:any , msg?:any) {//funcion para generar el dialog de error con un msg personalizado
@@ -55,14 +58,8 @@ export class ContactComponent implements OnInit {
       });
     }
 
-    openAndClose(): void {//cierra la ventana del form
-      this.addInport = !this.addInport;
-    }
-    
-    envio(): void {
-      alert('Envio de plata');//aqui iria el formulario para enviar dinero
-    }
-  
+   
+   
     LocalContact(id:any): Contact[] {//obtine los contactos de localStorage , si no existe se establece un array vacio
       const storeContacts = localStorage.getItem(`${id}`);
       return storeContacts ? JSON.parse(storeContacts) : [];
@@ -80,7 +77,7 @@ export class ContactComponent implements OnInit {
           if(!repeat){
             contacts.push({ name: data.first_name, userId: userId })
             localStorage.setItem(`${this.dataUser}`, JSON.stringify(contacts))
-            this.data = contacts
+            this.lista = contacts
           }else{
                this.openDialog("Error" , "Usario ya Registrado") 
           }      
@@ -98,12 +95,30 @@ export class ContactComponent implements OnInit {
     deleteContact(id:any){
       const contacts = this.LocalContact(this.dataUser); 
       const clear = contacts.filter((contacto: any) =>
-      (this.openDialog("succes" , "Contacto eliminado"),
+      (this.openDialog("Listo!" , "Contacto eliminado"),
       contacto.userId !== id ? contacto : null ));
       localStorage.setItem(`${this.dataUser}`, JSON.stringify(clear))
-      this.data = clear
+      this.lista = clear
+    }
+    
+    openAndClose(): void {//cierra la ventana del form
+      this.addInport = !this.addInport;
     }
 
+    openForm(id:any): void {
+      this.openAndClose2()
+      this.contactId = id
+    }
+
+    openAndClose2(): void {
+      this.addInport2 = !this.addInport2;
+    }
+
+    finalized():void{
+      this.openDialog("Listo!" ,"Transferencia Realizada")
+      this.openAndClose2()
+    }
+  
 }
 
  /*    this.httpservice.get(`${environment.URL_BASE}/users`).subscribe((data: any) => {

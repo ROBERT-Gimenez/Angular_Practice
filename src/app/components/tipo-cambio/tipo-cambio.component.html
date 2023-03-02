@@ -1,5 +1,11 @@
-<div class="card">
-    <h1 class="title"  >{{tipo}} ${{compra }} / ${{venta }} </h1>
-    <!-- <h2 class="compra">Compra:  </h2>
-    <h2 class="venta">Venta: </h2> -->
-</div>
+<div class="divisas">
+
+    <ng-container *ngFor="let item of data">
+        
+        <div class="card">
+            <h1 class="title"  >{{item.casa.nombre}} : {{item.casa.compra}} / {{item.casa.venta }} </h1>
+            <!-- <h2 class="compra">Compra:  </h2>
+                <h2 class="venta">Venta: </h2> -->
+            </div>
+        </ng-container>
+    </div>

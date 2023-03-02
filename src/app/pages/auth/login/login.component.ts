@@ -48,12 +48,12 @@ export class LoginComponent implements OnInit {
       next:(res:any) =>{
         localStorage.setItem('token',res.accessToken)
         let id!:number
-        this.loginService.userDates().subscribe((res:any)=>{id = res.id; console.log(id)})
+        this.loginService.userDates().subscribe((res:any)=>{id = res.id})
         this.loginService.getCuenta().subscribe(
           (res:any)=>{
             if(res.length == 0){
-              console.log(res)
-              this.loginService.crearCuenta(id).subscribe(res=>{console.log(res)})
+              
+              this.loginService.crearCuenta(id)
               this.router.navigateByUrl('/dashboard/home')
             
                     

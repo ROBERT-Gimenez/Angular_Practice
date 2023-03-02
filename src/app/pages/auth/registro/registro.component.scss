@@ -1,7 +1,6 @@
 .contenedor {
     display: flex;
     justify-content: center;
-    
     height: 100vh;
     align-items: center;
     text-align: center;
@@ -18,7 +17,7 @@
 .registerForm {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.717);
     width: 400px;
-    height: 32rem;
+    height: 30rem;
     padding: 35px;
     background-color: #fafafb;
     border-radius: 20px;
@@ -41,7 +40,7 @@ form {
     border: none;
     padding: 10px;
     cursor: pointer;
-    background-color: rgb(21, 19, 19);
+    background-color: #191939;
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
@@ -55,7 +54,7 @@ form {
 
 
 .registerForm .btnRegister:hover {
-    background-color: #373737;
+    background-color: #2a1939
 
 }
 

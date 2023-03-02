@@ -6,13 +6,13 @@
 
         <article class="information">
             <div class="movements">
-                <p class="text">Ultimos movimientos:</p>
+                <p class="text">Últimos movimientos:</p>
                 <div class="cards">
 
                     <div class="textSaldo">
-                        <div class="title">
+                        
                             <h3>EGRESO</h3>
-                        </div>
+                        
                         <div *ngIf="infoAcountPayment;then tiene else noTiene"></div>
 
                         <ng-template #tiene>
@@ -50,18 +50,18 @@
         </article>
 
         
-        <div class="banner">
+        <!-- <div class="banner">
             <img src="banner4.jpg">
-        </div>
+        </div> -->
         
     </section>
     
     <section class="acount">
         <div class="header">
-            <div class="containerImg">
+            <!-- <div class="containerImg">
                 <div class="img">
                 </div>
-            </div>
+            </div> -->
             <h3 *ngIf="dataUser">{{dataUser.first_name}} {{dataUser.last_name}}</h3>
         </div>
 
@@ -71,7 +71,10 @@
 
         </div>
 
-        <app-tipo-cambio></app-tipo-cambio>
+        <div class="divisas">
+            <app-tipo-cambio></app-tipo-cambio>
+        </div>
+        
 
     </section>
 </div>

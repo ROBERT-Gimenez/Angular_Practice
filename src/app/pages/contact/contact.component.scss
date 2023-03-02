@@ -168,7 +168,7 @@ hr{
     
 
 
-.card{
+.card , .card2{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -182,7 +182,13 @@ hr{
     position: relative;
     bottom: 2rem;
 }
-
+.card2{
+    
+    height: 457px;
+    position: relative;
+    bottom: 9rem;
+    width: 50%;
+}
 .header{
     display: flex;
     background-color: #7768b7;
@@ -204,7 +210,6 @@ hr{
     display: flex;
     align-items: center;
 }
-
 ::ng-deep.title{
     margin-top: 0;
 }
@@ -248,7 +253,7 @@ hr{
 
 }
 .btn_submit{
-background-color: rgb(56, 185, 90);
+background-color: rgb(68, 3, 142);
 color: rgb(254, 254, 254) !important;
 }
 .close_modal{
@@ -276,6 +281,9 @@ color: white;
     .card{
         width: 90%;
     }
+    .card2{
+        width: 60%;
+    }
     .inputs_container{
         gap: 0;
         flex-direction: column;
@@ -286,3 +294,23 @@ color: white;
     }
         
  }
+ @media (max-width:550px) {
+    .card2{
+        width: 80%;
+    }
+}
+ @media (max-width:400px) {
+    .accordion label{
+    justify-content: center;
+    column-gap: 0px;
+    padding-block: -3px;
+    padding-block: -14px;
+    }
+    .card2{
+        width: 90%;
+    }
+    .amountContainer{
+
+        min-width: 77px;
+    }
+}

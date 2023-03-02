@@ -42,8 +42,8 @@ export class WalletComponent implements OnInit {
 
   ngOnInit(): void {
       this.http.get(`${baseUrl}/accounts/me`).subscribe(
-        {next: (resp:any) => this.money = resp[0].money})
-        console.log(this.money)
+        {next: (resp:any) => this.money = (resp[0].money * 1)})
+  
       if(this.numberOperations){
         this.createMap()
       }
@@ -72,6 +72,7 @@ export class WalletComponent implements OnInit {
 
     
     if(date.value>this.money){
+    
       this.isInsufficient = true
       return
     }
@@ -139,7 +140,7 @@ export class WalletComponent implements OnInit {
 
   addData(data:any){
     this.data?.push(data)
-    console.log(data)
+  
     this.openAndClose()
   }
 

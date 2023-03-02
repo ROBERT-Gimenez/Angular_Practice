@@ -24,19 +24,17 @@ export class EgresosComponent implements OnInit {
   ngOnInit(): void {
     this.transactionsService.getTransactions("payment").subscribe((data:any) => {
       this.data = data;
-      console.log(this.data);
+
     }, (error:any) => {
       console.error(error);
     });
   }
 
-  editConcepto(){
-    alert("editar concepto")
-  }
+
 
   addData(data:any){
     this.data?.push(data)
-    console.log(data)
+
     this.openAndClose()
   }
 

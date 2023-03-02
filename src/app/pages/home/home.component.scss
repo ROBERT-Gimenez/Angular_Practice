@@ -48,7 +48,7 @@ img:hover{
 
 .acount{
     
-    background-color: #1f1f348c;
+    background-color: #1f1f34;
     width: 500px;
     height: auto;
     display: flex;
@@ -120,6 +120,9 @@ img:hover{
         font-size: 30px;
         font-weight: bold;
         color: white;
+        // background-color: #1f1942;
+        padding: 20px;
+        border-radius: 8px;
     }
 
 }
@@ -128,10 +131,13 @@ img:hover{
     width: 50%;
     flex-direction: column;
     align-items: center;
+    // background-color: #0000005c;
+    // border: solid 1px darkslateblue;
+    // padding: 50px;
+    // border-radius: 20px;
 }
 .textSaldo{
- 
-    background-color: #1f1942a4;
+    background-color: #1f1942;
     color: white;
     width: 220px;
     max-width: 250px;    
@@ -141,16 +147,15 @@ img:hover{
     flex-direction: column;
     gap: 10px;
     justify-content: flex-start;
-    // box-shadow:  $shadowBox;
     text-align: center;
+    padding: 0 0 30px 0;
 
     h3{
-        
-        margin: 0;
+       
+       
         font-size: 20px;
-        // font-weight: bold;
-        background-color: black;
-        padding: 10px;
+
+        padding: 20px;
         background-color: #342588;
         border-radius: 20px 20px 0 0;
     }
@@ -251,6 +256,9 @@ img:hover{
        justify-content: space-between;
        
     }
+    .divisas{
+        display:none
+    }
 
 
 }
@@ -345,3 +353,6 @@ img:hover{
     
 }
 
+.divisas{
+    margin-top: 50px;
+}
