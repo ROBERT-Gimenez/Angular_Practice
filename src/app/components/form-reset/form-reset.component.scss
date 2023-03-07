@@ -63,10 +63,9 @@ div.input-container{
 .icon_eye{
   margin: -2%;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   left: 85%;
-  z-index: 2
-  ;
+  z-index: 2;
 }
 .icon_eye:hover{
   scale: 1.1;
