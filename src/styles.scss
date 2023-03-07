@@ -54,7 +54,13 @@ div.cortina{
     z-index: -2;
     // background-color: #240c31;
     background-image: $gradiant;
+    background-image: url('./app/assets/img/undraw_digital_currency_qpak.svg');
     top: 0;
+    object-fit: cover;
+    place-content: center;
+    background-color: #6445ff;
+    background-repeat: no-repeat;
+    background-position: center;
     
 }
 div.elem1{
@@ -117,6 +123,13 @@ div.elem2{
       min-height: 140vh;
     }
 }
+@media (max-width:650px) {
+  div.cortina{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
 @media (max-width:550px) {
     body{
        /*  background-image:linear-gradient(90deg,#5f46c3,#9f89f8,#6d39d4); */
@@ -125,6 +138,7 @@ div.elem2{
     div.fondo{
       min-height:none;
     }
+  
     @keyframes move {
       0% {
         transform: translate(-50%, -50%) translateY(150px) rotate(0deg) translate(10px) rotate(0deg);

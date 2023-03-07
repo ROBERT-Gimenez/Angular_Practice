@@ -15,11 +15,11 @@
           </mat-error>
         </mat-form-field>
 
-<div>
-        <mat-icon class="icon_eye" (click)="togglePasswordVisibility()" >
-          {{passwordVisibility ? 'visibility' : 'visibility_off'}}
-        </mat-icon>
-        <mat-form-field appearance="fill">
+  <div>
+    <mat-form-field appearance="fill" style="display: flex;">
+          <mat-icon class="icon_eye" (click)="togglePasswordVisibility()" >
+            {{passwordVisibility ? 'visibility' : 'visibility_off'}}
+          </mat-icon>
           <mat-label for="password">Contraseña</mat-label>
           <input matInput formControlName="password"
             [type]="passwordVisibility ? 'text' : 'password'"
@@ -30,7 +30,7 @@
             {{ getErrorMessage('password') }}
           </mat-error>
         </mat-form-field>
-      </div>
+    </div>
 
         <mat-form-field appearance="fill">
           <mat-label for="password2">Confirme su Contraseña</mat-label>
